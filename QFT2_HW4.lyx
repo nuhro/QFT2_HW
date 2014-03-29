@@ -263,6 +263,14 @@ Define
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+and 
+\begin_inset Formula $\hat{D}^{\dagger}=\left(-i\overleftarrow{\partial_{\mu}}\gamma^{\mu\dagger}-M\mathds{1}-i\varepsilon_{2}\mathds{1}\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -398,13 +406,7 @@ Define
 \begin_inset Formula $\tilde{\bar{\psi}}\left(x\right):=\bar{\psi}\left(x\right)-i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)$
 \end_inset
 
- 
-\bar under
-what happens when 
-\begin_inset Formula $\hat{D}$
-\end_inset
 
- acts on this?
 \end_layout
 
 \begin_layout Itemize
@@ -521,113 +523,6 @@ For the Fermionic fields we follow a similar procedure:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\hat{D}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\slashed{\partial}^{ab}-M\mathds{1}^{ab}+i\varepsilon_{2}\mathds{1}^{ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\slashed{\partial}^{ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right){1}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\partial_{\mu}\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right)\tilde{\psi}^{a}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=\underbrace{\int d^{4}x\partial_{\mu}\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} }_{0}-$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $-\int d^{4}x\partial_{\mu}\left\{ \partial_{\mu}\left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right)\tilde{\psi}^{a}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=-\int d^{4}x\left\{ \partial_{\mu}\left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(-M+i\varepsilon_{2}\right)\mathds{1}^{cd}S_{F}\,_{da}\left(x-y\right)\right]\tilde{\psi}^{a}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $=-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(i\partial_{\mu}\gamma^{\mu ab}\right)S_{F}\,_{ca}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} +$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(-M\mathds{1}^{cd}+i\varepsilon_{2}\mathds{1}^{cd}\right)S_{F}\,_{da}\left(x-y\right)\right]\tilde{\psi}^{a}\left(x\right)\right\} =$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 Some care has to be taken with the term 
 \begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\hat{D}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} $
 \end_inset
@@ -659,33 +554,12 @@ partial integrations
 \end_inset
 
  we got back the same sign we had originally.
- However, now, when 
-\begin_inset Formula $\slashed{\partial}$
-\end_inset
-
- acts on 
-\begin_inset Formula $\bar{\eta}\left(y\right)S_{F}\left(x-y\right)$
-\end_inset
-
-, it will pick up an additional minus sign when anti-commuting the gamma
- matrix in 
-\begin_inset Formula $\slashed{\partial}$
-\end_inset
-
- with the 
-\begin_inset Formula $\gamma^{0}$
-\end_inset
-
- in 
-\begin_inset Formula $\bar{\eta}$
-\end_inset
-
-:
+ So we get:
 \begin_inset Newline newline
 \end_inset
 
 
-\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\partial_{\mu}\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\hat{D}\tilde{\psi}\left(x\right)\right\} =$
 \end_inset
 
 
@@ -693,7 +567,7 @@ partial integrations
 \end_inset
 
 
-\begin_inset Formula $=-\int d^{4}x\left\{ \left[\partial_{\mu}i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\left(i\partial_{\mu}\gamma^{\mu}-M\mathds{1}+i\varepsilon_{2}\mathds{1}\right)\tilde{\psi}\left(x\right)\right\} =$
 \end_inset
 
 
@@ -701,7 +575,7 @@ partial integrations
 \end_inset
 
 
-\begin_inset Formula $\stackrel{\mbox{\partial}\mbox{ acts only on \ensuremath{x}}}{=}-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}S_{F}\,_{ca}\left(x-y\right)\right]\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]i\partial_{\mu}\gamma^{\mu}\tilde{\psi}\left(x\right)\right\} +$
 \end_inset
 
 
@@ -709,7 +583,7 @@ partial integrations
 \end_inset
 
 
-\begin_inset Formula $=-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}\gamma^{\mu\, ab}S_{F}\,_{ca}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} =???$
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\left(-M\mathds{1}+i\varepsilon_{2}\mathds{1}\right)\tilde{\psi}\left(x\right)\right\} =$
 \end_inset
 
 
@@ -717,10 +591,38 @@ partial integrations
 \end_inset
 
 
-\begin_inset Formula $???=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}\gamma^{\mu\, ca}S_{F}\,_{a}\,^{b}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} $
+\begin_inset Formula $\stackrel{\mbox{Stokes' Theorem and }\partial\mbox{ only acts on }y}{=}-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)\partial_{\mu}S_{F}\left(x-y\right)\right]i\gamma^{\mu}\tilde{\psi}\left(x\right)\right\} +$
 \end_inset
 
- check something about grassmann derivatives anticommuting!
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)\left(-M\mathds{1}+i\varepsilon_{2}\mathds{1}\right)S_{F}\left(x-y\right)\right]\tilde{\psi}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)\left(-i\partial_{\mu}S_{F}\left(x-y\right)\gamma^{\mu}+\left(-M+i\varepsilon_{2}\right)S_{F}\left(x-y\right)\right)\right]\tilde{\psi}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)\left(-i\partial_{\mu}S_{F}\left(x-y\right)\gamma^{\mu}+\left(-M+i\varepsilon_{2}\right)S_{F}\left(x-y\right)\right)\right]\tilde{\psi}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
