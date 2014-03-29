@@ -1,0 +1,3031 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\usepackage{dsfont}
+
+\usepackage{amsmath}
+
+\usepackage{slashed}
+\usepackage{breqn}
+% Add support for automatic equation breaking
+\gdef\wrap@breqn@environ#1#2{
+    \expandafter\let\csname breqn@oldbegin@#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\let\csname breqn@oldend@#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\gdef\csname breqn@begin@#1\endcsname{%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@oldbegin@#1\endcsname%
+        \begin{#2}%
+    }
+    \expandafter\gdef\csname breqn@end@#1\endcsname{%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@oldend@#1\endcsname%
+        \end{#2}%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname%
+    }
+    \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname
+    \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname
+}
+\wrap@breqn@environ{equation}{dmath}
+\wrap@breqn@environ{equation*}{dmath*}
+\global\let\[=\equation 
+\global\let\]=\endequation
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Solutions to Homework No.
+ 3 in Quantum Field Theory II
+\end_layout
+
+\begin_layout Author
+Jacob Shapiro
+\end_layout
+
+\begin_layout Enumerate
+The Lagrangian for a free scalar field is given by 
+\begin_inset Formula $\mathcal{L}=\frac{1}{2}\eta\left(\partial\left(\phi\right),\,\partial\left(\phi\right)\right)-\frac{1}{2}m^{2}\phi^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ The equation of motion for 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is 
+\begin_inset Formula $\boxed{trace\left(\partial\left(\partial\left(\phi\right)\right)\right)+m^{2}\phi=0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+We begin from the Euler-Lagrange equation, which is 
+\begin_inset Formula $ $
+\end_inset
+
+(now switching back to index-notation) 
+\begin_inset Formula $\partial_{\mu}\left[\frac{\partial\mathcal{L}}{\partial\left(\partial_{\mu}\phi\right)}\right]-\frac{\partial\mathcal{L}}{\partial\phi}=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\frac{\partial\mathcal{L}}{\partial\phi}=\frac{\partial}{\partial\phi}\left[\frac{1}{2}\left(\partial_{\mu}\phi\right)\left(\partial^{\mu}\phi\right)-\frac{1}{2}m^{2}\phi^{2}\right]=-m^{2}\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\frac{\partial\mathcal{L}}{\partial\left(\partial_{\mu}\phi\right)}=\frac{\partial}{\partial\left(\partial_{\mu}\phi\right)}\left[\frac{1}{2}\left(\partial_{\nu}\phi\right)\left(\partial^{\nu}\phi\right)-\frac{1}{2}m^{2}\phi^{2}\right]=\frac{\partial}{\partial\left(\partial_{\mu}\phi\right)}\left[\frac{1}{2}\eta^{\alpha\beta}\left(\partial_{\alpha}\phi\right)\left(\partial_{\beta}\phi\right)\right]=\frac{1}{2}\eta^{\alpha\beta}\left[\left(\partial_{\alpha}\phi\right)\delta_{\,\,\,\beta}^{\mu}+\delta_{\,\,\,\alpha}^{\mu}\left(\partial_{\beta}\phi\right)\right]=\partial^{\mu}\phi$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+and hence:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\partial_{\mu}\left[\frac{\partial\mathcal{L}}{\partial\left(\partial_{\mu}\phi\right)}\right]=\partial_{\mu}\left[\partial^{\mu}\phi\right]\equiv trace\left(\partial\left(\partial\left(\phi\right)\right)\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{0\,|\, T\left(\phi\left(x\right)\phi\left(y\right)\right)\,|\,0}=\lim_{\varepsilon\to0^{+}}\int_{\mathbb{R}^{4}}\frac{d^{4}q}{\left(2\pi\right)^{4}}\frac{ie^{-i\eta\left(q,\,\left(x-y\right)\right)}}{\eta\left(q,\, q\right)-m^{2}+i\varepsilon}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The conjugate momentum-field to 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is 
+\begin_inset Formula $\pi\equiv\frac{\partial\mathcal{L}}{\partial\left(\partial_{0}\phi\right)}=\partial^{0}\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compute the Hamiltonian:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $H\equiv\int_{\mathbb{R}^{3}}d^{3}\vec{x}\left[\pi\left(t,\,\vec{x}\right)\partial_{0}\phi\left(t,\,\vec{x}\right)-\mathcal{L}\left(t,\,\vec{x}\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}^{3}}d^{3}\vec{x}\left\{ \frac{1}{2}\left[\pi\left(t,\,\vec{x}\right)\right]^{2}+\frac{1}{2}\left[\vec{\nabla}\phi\left(t,\,\vec{x}\right)\right]^{2}+\frac{1}{2}m^{2}\left[\phi\left(t,\,\vec{x}\right)\right]^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+To quantize the theory, let 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi$
+\end_inset
+
+ now be 
+\emph on
+operators 
+\emph default
+(or rather operator valued distributions).
+ Assume 
+\emph on
+equal time 
+\emph default
+commutation relations hold: 
+\begin_inset Formula $\left[\phi\left(t,\,\vec{x}\right),\,\pi\left(t,\,\vec{y}\right)\right]\stackrel{!}{=}i\delta^{\left(3\right)}\left(\vec{x}-\vec{y}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Writing the equation of motion for 
+\begin_inset Formula $\phi$
+\end_inset
+
+ in momentum space:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left(\partial_{t}^{2}+\left|\vec{p}\right|^{2}+m^{2}\right)\tilde{\phi}\left(t,\,\vec{p}\right)=0$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+results in an equation of a simple harmonic oscillator with frequency 
+\begin_inset Formula $\omega_{\vec{p}}:=\sqrt{\left|\vec{p}\right|^{2}+m^{2}}$
+\end_inset
+
+.
+ Hence we conclude that for each value of 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+ there is an indepedent oscillator.
+ We may retrace the solution of the simple harmonic oscillator for a single
+ particle of frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ to our case, generalizing to an infinite number of harmonic oscillators
+ indexed by 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Accordingly, 
+\begin_inset Formula $\forall\vec{p}\in\mathbb{R}^{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\forall t\in\mathbb{R}$
+\end_inset
+
+, define two new operator valued distributions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $a_{\vec{p}}\left(t\right):=\frac{1}{2}\left[\sqrt{2\omega_{\vec{p}}}\int_{\mathbb{R}^{3}}d^{3}\vec{x}e^{-i\vec{p}\cdot\vec{x}}\phi\left(t\,,\vec{x}\right)+i\sqrt{\frac{2}{\omega_{\vec{p}}}}\int_{\mathbb{R}^{3}}d^{3}\vec{x}e^{-i\vec{p}\cdot\vec{x}}\pi\left(t\,,\vec{x}\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a_{\vec{p}}^{\dagger}\left(t\right):=\frac{1}{2}\left[\sqrt{2\omega_{\vec{p}}}\int_{\mathbb{R}^{3}}d^{3}\vec{x}e^{+i\vec{p}\cdot\vec{x}}\phi\left(t\,,\vec{x}\right)-i\sqrt{\frac{2}{\omega_{\vec{p}}}}\int_{\mathbb{R}^{3}}d^{3}\vec{x}e^{+i\vec{p}\cdot\vec{x}}\pi\left(t\,,\vec{x}\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus we assume 
+\begin_inset Formula $\exists$
+\end_inset
+
+ we have a Hilbert space, 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+, which is the 
+\begin_inset Quotes eld
+\end_inset
+
+infinite direct sum
+\begin_inset Quotes erd
+\end_inset
+
+ of the Hilbert space of each oscillator indexed by 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathcal{H}=\bigoplus_{\vec{p}\in\mathbb{R}^{3}}\mathcal{H}_{\vec{p}}$
+\end_inset
+
+.
+ This is called the Fock space.
+ We assume that in it, 
+\begin_inset Formula $\exists$
+\end_inset
+
+ a special state, 
+\begin_inset Formula $\Ket{0}$
+\end_inset
+
+, such that 
+\begin_inset Formula $a_{\vec{p}}\Ket{0}=0\forall\vec{p}\in\mathbb{R}^{3}$
+\end_inset
+
+.
+ Then, using the same procedure as for a system with a 
+\emph on
+single
+\emph default
+ harmonic oscillator, we can show that 
+\begin_inset Formula $a_{\vec{p}}^{\dagger}\Ket{0}$
+\end_inset
+
+ corresponds to a state of particle of 
+\begin_inset Quotes eld
+\end_inset
+
+type
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+ etc.
+\end_layout
+
+\begin_layout Enumerate
+Write the field / momentum-field in terms of these two newly defined operators:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\phi\left(t,\,\vec{x}\right)=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{1}{\sqrt{2\omega_{\vec{p}}}}\left(a_{\vec{p}}\left(t\right)e^{i\vec{p}\cdot\vec{x}}+a_{\vec{p}}^{\dagger}\left(t\right)e^{-i\vec{p}\cdot\vec{x}}\right)$
+\end_inset
+
+ and
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\pi\left(t,\,\vec{x}\right)=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\left(-i\right)\sqrt{\frac{\omega_{\vec{p}}}{2}}\left(a_{\vec{p}}\left(t\right)e^{i\vec{p}\cdot\vec{x}}-a_{\vec{p}}^{\dagger}\left(t\right)e^{-i\vec{p}\cdot\vec{x}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Plug in those expressions of 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{\dagger}$
+\end_inset
+
+ into 
+\begin_inset Formula $H$
+\end_inset
+
+ to obtain:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $H=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{\omega_{\vec{p}}}{2}\left(a_{\vec{p}}\left(t\right)a_{\vec{p}}^{\dagger}\left(t\right)+a_{\vec{p}}^{\dagger}\left(t\right)a_{\vec{p}}\left(t\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compute the commutator 
+\begin_inset Formula $\left[a_{\vec{p}}\left(t\right),\, a_{\vec{q}}^{\dagger}\left(t\right)\right]$
+\end_inset
+
+ using the knowledge of 
+\begin_inset Formula $\left[\phi\left(t,\,\vec{x}\right),\,\pi\left(t,\,\vec{y}\right)\right]$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left[a_{\vec{p}}\left(t\right),\, a_{\vec{q}}^{\dagger}\left(t\right)\right]=\left(2\pi\right)^{3}\delta^{\left(3\right)}\left(\vec{p}-\vec{q}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use that to rewrite the Hamiltonian now as:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $H=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\omega_{\vec{p}}\left[a_{\vec{p}}^{\dagger}\left(t\right)a_{\vec{p}}\left(t\right)+\underbrace{\frac{1}{2}\left(2\pi\right)^{3}\delta^{\left(3\right)}\left(0\right)}_{\mbox{constant infinite term which we shift away}}\right]=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\omega_{\vec{p}}a_{\vec{p}}^{\dagger}\left(t\right)a_{\vec{p}}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Using this result we may compute the following commutators:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left[H,\, a_{\vec{p}}\left(t\right)\right]=-\omega_{\vec{p}}a_{\vec{p}}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left[H,\, a_{\vec{p}}^{\dagger}\left(t\right)\right]=\omega_{\vec{p}}a_{\vec{p}}^{\dagger}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus we may compute the ladder operators at different times 
+\begin_inset Formula $t$
+\end_inset
+
+ given their value at some reference time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $a_{\vec{p}}\left(t\right)\equiv e^{iH\left(t-t_{0}\right)}a_{\vec{p}}\left(t_{0}\right)e^{-iH\left(t-t_{0}\right)}\stackrel{\mbox{Using the above relations recursively}}{=}e^{-i\left(t-t_{0}\right)\omega_{\vec{p}}}a_{\vec{p}}\left(t_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+And similarly 
+\begin_inset Formula $a_{\vec{p}}^{\dagger}\left(t\right)=e^{+i\left(t-t_{0}\right)\omega_{\vec{p}}}a_{\vec{p}}^{\dagger}\left(t_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+From which we can get the value of the field and momentum-field operators
+ at different times 
+\begin_inset Formula $t$
+\end_inset
+
+ given their value at some reference time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\phi\left(x\right)=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{1}{\sqrt{2\omega_{\vec{p}}}}\left[a_{\vec{p}}\left(t_{0}\right)e^{-i\eta\left(p,\, x\right)}+a_{\vec{p}}^{\dagger}\left(t_{0}\right)e^{+i\eta\left(p,\, x\right)}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\pi\left(x\right)=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\left(-i\right)\sqrt{\frac{\omega_{\vec{p}}}{2}}\left[a_{\vec{p}}\left(t_{0}\right)e^{-i\eta\left(p,\, x\right)}-a_{\vec{p}}^{\dagger}\left(t_{0}\right)e^{+i\eta\left(p,\, x\right)}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where we have used the convention that 
+\begin_inset Formula $p^{0}:=\omega_{\vec{p}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Compute 
+\begin_inset Formula $\Braket{0|\phi\left(y\right)\phi\left(x\right)|0}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Braket{0|\phi\left(y\right)\phi\left(x\right)|0}=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, y-x\right)}}{2\omega_{\vec{p}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compute 
+\begin_inset Formula $\lim_{\varepsilon\to0^{+}}\int_{\mathbb{R}}\frac{dE}{\left(2\pi\right)}\frac{ie^{-iEt}}{E^{2}-\omega_{\vec{p}}^{2}+i\varepsilon}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+This integral has two poles on the 
+\emph on
+real
+\emph default
+ axis which are slightly shifted up and down by the 
+\begin_inset Formula $i\varepsilon$
+\end_inset
+
+ term.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In order to compute this integral we use Cauchy's lemma to ascertain that
+ an integral with a semicircular contour (with base on the real axis, with
+ radius approaching infinity, up or down depending on the sign of 
+\begin_inset Formula $t$
+\end_inset
+
+--so that the integral on the arc alone will tend to zero) is equal to the
+ residue inside the contour.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Thus all together we find that 
+\begin_inset Formula $\int_{\mathbb{R}}\frac{dE}{\left(2\pi\right)}\frac{ie^{-iEt}}{E^{2}-\omega_{\vec{p}}^{2}+i\varepsilon}=\theta\left(t\right)\frac{e^{-i\omega_{\vec{p}}t}}{2\omega_{\vec{p}}}+\theta\left(-t\right)\frac{e^{+i\omega_{\vec{p}}t}}{2\omega_{\vec{p}}}=\frac{e^{-i\omega_{\vec{p}}\left|t\right|}}{2\omega_{\vec{p}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+Note:
+\bar default
+ This can also be achieved by Wick-rotating 
+\begin_inset Formula $E\mapsto-iE$
+\end_inset
+
+ to get 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $-\int_{\mathbb{R}}\frac{dE}{\left(2\pi\right)}\frac{e^{-Et}}{-E^{2}-\omega_{\vec{p}}^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+So that we have finally:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Braket{0\,|\, T\left(\phi\left(x\right)\phi\left(y\right)\right)\,|\,0}\equiv\theta\left(x^{0}-y^{0}\right)\Braket{0\,|\,\phi\left(x\right)\phi\left(y\right)\,|\,0}+\theta\left(y^{0}-x^{0}\right)\Braket{0\,|\,\phi\left(y\right)\phi\left(x\right)\,|\,0}=\theta\left(x^{0}-y^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, x-y\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, y-x\right)}}{2\omega_{\vec{p}}}\stackrel{\vec{p}\mapsto-\vec{p}\:\mbox{in the 2nd integral}}{=}\theta\left(x^{0}-y^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, x-y\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(\left(p^{0},\,-\vec{p}\right),\, y-x\right)}}{2\omega_{\vec{p}}}=\theta\left(x^{0}-y^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, x-y\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\,\left(y^{0}-x^{0},\,\vec{x}-\vec{y}\right)\right)}}{2\omega_{\vec{p}}}=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}e^{i\vec{p}\cdot\left(\vec{x}-\vec{y}\right)}\left[\theta\left(x^{0}-y^{0}\right)\frac{e^{-ip^{0}\left(x^{0}-y^{0}\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\frac{e^{-ip^{0}\left(y^{0}-x^{0}\right)}}{2\omega_{\vec{p}}}\right]=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}e^{i\vec{p}\cdot\left(\vec{x}-\vec{y}\right)}\left[\theta\left(x^{0}-y^{0}\right)\frac{e^{-ip^{0}\left(x^{0}-y^{0}\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\frac{e^{+ip^{0}\left(x^{0}-y^{0}\right)}}{2\omega_{\vec{p}}}\right]=\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}e^{i\vec{p}\cdot\left(\vec{x}-\vec{y}\right)}\lim_{\varepsilon\to0^{+}}\int_{\mathbb{R}}\frac{dE}{\left(2\pi\right)}\frac{ie^{-iE\left(x^{0}-y^{0}\right)}}{E-\left|\vec{p}\right|^{2}-m^{2}+i\varepsilon}\stackrel{\mbox{change integral and limit}}{=}\lim_{\varepsilon\to0^{+}}\int_{\mathbb{R}^{4}}\frac{d^{4}p}{\left(2\pi\right)^{4}}\frac{ie^{-\eta\left(p,\, x-y\right)}}{\eta\left(p,\, p\right)-m^{2}+i\varepsilon}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Path Integral Quantization
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\mathcal{Z}\left[J\right]=\exp\left[-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\left(\left.\mathcal{Z}\left[J\right]\right|_{J=0}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\tilde{D}_{F}\left(x-y\right)$
+\end_inset
+
+ is a Green's function of 
+\begin_inset Formula $\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathcal{Z}\left[J\right]\equiv\mathcal{N}\int\mathcal{D}\phi\exp\left\{ i\int d^{4}x\left[\mathcal{L}+J\phi+\frac{1}{2}i\varepsilon\phi^{2}\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Manipulate 
+\begin_inset Formula $\int d^{4}x\left[\mathcal{L}+J\phi+\frac{1}{2}i\varepsilon\phi^{2}\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\int d^{4}x\left[\mathcal{L}+J\phi\right]=\int d^{4}x\left[\frac{1}{2}\left(\partial_{\nu}\phi\right)\left(\partial^{\nu}\phi\right)-\frac{1}{2}m^{2}\phi^{2}+J\phi+\frac{1}{2}i\varepsilon\phi^{2}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\partial_{\nu}\left(\phi\left(\partial^{\nu}\phi\right)\right)-\frac{1}{2}\phi\left(\partial_{\nu}\partial^{\nu}\phi\right)-\frac{1}{2}m^{2}\phi^{2}+J\phi+\frac{1}{2}i\varepsilon\phi^{2}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use Stokes' Thereom to ascertain that 
+\begin_inset Formula $\int d^{4}x\left[\frac{1}{2}\partial_{\nu}\left(\phi\left(\partial^{\nu}\phi\right)\right)\right]=0$
+\end_inset
+
+ assuming that 
+\begin_inset Formula $\phi$
+\end_inset
+
+ on the boundary of integration is zero.
+\end_layout
+
+\begin_layout Enumerate
+Thus we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\phi\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon\right)\phi+J\phi\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Define a differential operator 
+\begin_inset Formula $KG:=-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon$
+\end_inset
+
+, so that we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\phi KG\phi+J\phi\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Next, define 
+\begin_inset Formula $\tilde{\phi}\left(x\right):=\phi\left(x\right)-i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\tilde{D}_{F}\left(x-y\right)$
+\end_inset
+
+ is a Green's function of 
+\begin_inset Formula $KG$
+\end_inset
+
+, that is, we assume the following equation holds: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $KG\,\tilde{D}_{F}\left(x-y\right)=i\delta\left(x-y\right)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Plug in 
+\begin_inset Formula $\phi\left(x\right)=\tilde{\phi}\left(x\right)+i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+ into the above to get:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $=\int d^{4}x\left\{ \frac{1}{2}\left[\tilde{\phi}\left(x\right)+i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]KG\left[\tilde{\phi}\left(x\right)+i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}xJ\left(x\right)\left[\tilde{\phi}\left(x\right)+i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \frac{1}{2}\left[\tilde{\phi}\left(x\right)\right]KG\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \frac{1}{2}\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]KG\left[\tilde{\phi}\left(x\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \frac{1}{2}\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]KG\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}xJ\left(x\right)\tilde{\phi}\left(x\right)+i\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int d^{4}x\left\{ \frac{1}{2}\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]KG\left[\tilde{\phi}\left(x\right)\right]\right\} =\int d^{4}x\left\{ \frac{1}{2}\left[KGi\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\left[\tilde{\phi}\left(x\right)\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\begin_inset Newline newline
+\end_inset
+
+
+\bar default
+The only thing we need to reverse is the derivative, all the other terms
+ can be applied just as well to the right or to the left.
+\begin_inset Newline newline
+\end_inset
+
+We write 
+\begin_inset Formula $\int d^{4}x\left\{ \frac{1}{2}\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\partial_{\nu}\partial^{\nu}\tilde{\phi}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\partial_{\nu}\left\{ \frac{1}{2}\left[i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\partial^{\nu}\tilde{\phi}\left(x\right)\right\} -$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\int d^{4}x\left\{ \frac{1}{2}\left[i\partial_{\nu}\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\partial^{\nu}\tilde{\phi}\left(x\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now use Stokes' theorem and assume that 
+\begin_inset Formula $\partial^{\nu}\tilde{\phi}\left(x\right)\to0$
+\end_inset
+
+ on the boundary of spacetime, so that the first term is zero.
+ So we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\left\{ \frac{1}{2}\left[i\partial_{\nu}\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\partial^{\nu}\tilde{\phi}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\partial^{\nu}\left\{ \frac{1}{2}\left[i\partial_{\nu}\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\tilde{\phi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \frac{1}{2}\left[i\partial^{\nu}\partial_{\nu}\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\tilde{\phi}\left(x\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Now we use Stokes' theorem again, assuming even more reasonably that 
+\begin_inset Formula $\tilde{\phi}\left(x\right)\to0$
+\end_inset
+
+ on the boundary of spacetime so that again the first term is zero.
+ So we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \frac{1}{2}\left[i\partial^{\nu}\partial_{\nu}\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\tilde{\phi}\left(x\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus we have proven that we can move the 
+\begin_inset Formula $KG$
+\end_inset
+
+ operator to the other term in an integral.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Now use the fact that 
+\begin_inset Formula $KG\,\tilde{D}_{F}\left(x-y\right)=i\delta\left(x-y\right)$
+\end_inset
+
+, and the above claim, and so we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\frac{1}{2}\int d^{4}xJ\left(x\right)\tilde{\phi}\left(x\right)-$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\frac{1}{2}\int d^{4}x\left\{ J\left(x\right)\tilde{\phi}\left(x\right)\right\} -$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\frac{1}{2}i\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}xJ\left(x\right)\tilde{\phi}\left(x\right)+i\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]+\frac{1}{2}i\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}\left[J\right]\equiv\mathcal{N}\int\mathcal{D}\phi\exp\left\{ i\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Make a change of variable in the functional integral 
+\begin_inset Formula $\phi\mapsto\tilde{\phi}$
+\end_inset
+
+.
+ Since we are shifting by a constant, namely, 
+\begin_inset Formula $i\int d^{4}y\tilde{D}_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+, we have that 
+\begin_inset Formula $\mathcal{D}\phi=\mathcal{D}\tilde{\phi}$
+\end_inset
+
+, thus:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}\tilde{\phi}\exp\left\{ i\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left[-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\mathcal{N}\int\mathcal{D}\tilde{\phi}\exp\left[i\frac{1}{2}\int d^{4}x\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left[-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\left(\left.\mathcal{Z}\left[J\right]\right|_{J=0}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{0\,|\, T\left(\hat{\phi}\left(x_{1}\right)\hat{\phi}\left(x_{2}\right)\right)\,|\,0}=\tilde{D}_{F}\left(x-y\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+As shown in the lecture, 
+\begin_inset Formula $\Braket{0\,|\, T\left(\hat{\phi}\left(x_{1}\right)\hat{\phi}\left(x_{2}\right)\right)\,|\,0}=\frac{\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\left[-i\frac{\delta}{\delta J\left(x_{2}\right)}\right]\mathcal{Z}\left[J\right]\right\} \right|_{J=0}}{\left.\mathcal{Z}\left[J\right]\right|_{J=0}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\frac{\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\left[-i\frac{\delta}{\delta J\left(x_{2}\right)}\right]\mathcal{Z}\left[J\right]\right\} \right|_{J=0}}{\left.\mathcal{Z}\left[J\right]\right|_{J=0}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\left[-i\frac{\delta}{\delta J\left(x_{2}\right)}\right]\exp\left[-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\left(\left.\mathcal{Z}\left[J\right]\right|_{J=0}\right)\right\} \right|_{J=0}}{\left.\mathcal{Z}\left[J\right]\right|_{J=0}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\left[-i\frac{\delta}{\delta J\left(x_{2}\right)}\right]\exp\left[-\frac{1}{2}\int d^{4}x\int d^{4}yJ\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\exp\left[\dots\right]\left[+\frac{1}{2}i\int d^{4}x\int d^{4}y\frac{\delta}{\delta J\left(x_{2}\right)}J\left(x\right)\tilde{D}_{F}\left(x-y\right)J\left(y\right)\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\exp\left[\dots\right]\left[+\frac{1}{2}i\int d^{4}y\tilde{D}_{F}\left(x_{2}-y\right)J\left(y\right)+\frac{1}{2}i\int d^{4}xJ\left(x\right)\tilde{D}_{F}\left(x-x_{2}\right)\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\exp\left[\dots\right]\left[i\int d^{4}x\tilde{D}_{F}\left(x-x_{2}\right)J\left(x\right)\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \exp\left[\dots\right]\left[-i\frac{\delta}{\delta J\left(x_{1}\right)}\right]\left[i\int d^{4}x\tilde{D}_{F}\left(x-x_{2}\right)J\left(x\right)\right]\right\} \right|_{J=0}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\left.\left\{ \exp\left[\dots\right]\left[i\int d^{4}x\tilde{D}_{F}\left(x-x_{1}\right)J\left(x\right)\right]\left[i\int d^{4}x\tilde{D}_{F}\left(x-x_{2}\right)J\left(x\right)\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Since we are setting 
+\begin_inset Formula $J=0$
+\end_inset
+
+, the second term is just zero.
+ The first one is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left.\left\{ \exp\left[\dots\right]\tilde{D}_{F}\left(x_{1}-x_{2}\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\tilde{D}_{F}\left(x_{1}-x_{2}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\tilde{D}_{F}\left(x_{1}-x_{2}\right)=\int_{\mathbb{R}^{4}}\frac{d^{4}p}{\left(2\pi\right)^{4}}\frac{ie^{-ip\left(x_{1}-x_{2}\right)}}{p^{2}-m^{2}+i\varepsilon}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Start from the defining equation of 
+\begin_inset Formula $\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon\right)\,\tilde{D}_{F}\left(x-y\right)=i\delta\left(x-y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Whatever 
+\begin_inset Formula $\tilde{D}_{F}\left(x-y\right)$
+\end_inset
+
+, write its Fourier transform: 
+\begin_inset Formula $\tilde{D}_{F}\left(x-y\right)=\int\frac{d^{4}p}{\left(2\pi\right)^{4}}e^{-ip\left(x_{1}-x_{2}\right)}D_{F}\left(p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Write 
+\begin_inset Formula $\delta\left(x-y\right)=\int\frac{d^{4}p}{\left(2\pi\right)^{4}}e^{-ip\left(x_{1}-x_{2}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Thus we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon\right)\,\int\frac{d^{4}p}{\left(2\pi\right)^{4}}e^{-ip\left(x_{1}-x_{2}\right)}D_{F}\left(p\right)=i\int\frac{d^{4}p}{\left(2\pi\right)^{4}}e^{-ip\left(x_{1}-x_{2}\right)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int\frac{d^{4}p}{\left(2\pi\right)^{4}}\left(p^{2}-m^{2}+i\varepsilon\right)e^{-ip\left(x_{1}-x_{2}\right)}D_{F}\left(p\right)=\int\frac{d^{4}p}{\left(2\pi\right)^{4}}ie^{-ip\left(x_{1}-x_{2}\right)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus it must hold that:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $D_{F}\left(p\right)=\frac{i}{p^{2}-m^{2}+i\varepsilon}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Note that using the first question, we can now say that 
+\begin_inset Formula $\lim_{\varepsilon\to0}\tilde{D}_{F}\left(x-y\right)=\theta\left(x^{0}-y^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, x-y\right)}}{2\omega_{\vec{p}}}+\theta\left(y^{0}-x^{0}\right)\int_{\mathbb{R}^{3}}\frac{d^{3}\vec{p}}{\left(2\pi\right)^{3}}\frac{e^{-i\eta\left(p,\, y-x\right)}}{2\omega_{\vec{p}}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $m\in\mathbb{N}\backslash\left\{ 0,\,1,\,2\right\} $
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g\in\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Let an action be given as 
+\begin_inset Formula $S=\int dt\left(\frac{1}{2}\dot{x}^{2}-\frac{1}{2}\omega^{2}x^{2}-\frac{g}{m!}x^{m}\right)$
+\end_inset
+
+.
+ (The mass of the 
+\begin_inset Quotes eld
+\end_inset
+
+particle
+\begin_inset Quotes erd
+\end_inset
+
+ is set to 
+\begin_inset Formula $1$
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First, let us work in Euclidean time so that 
+\begin_inset Formula $S_{E}=\int dt\left(\frac{1}{2}\dot{x}^{2}+\frac{1}{2}\omega^{2}x^{2}+\frac{g}{m!}x^{m}\right)$
+\end_inset
+
+.
+ The reason why we make this switch will become apparent in what follows.
+ Thus all quantities below are assumed to be Wick rotated to imaginary time
+ and the subscript 
+\begin_inset Formula $_{E}$
+\end_inset
+
+ is omitted but implied.
+\end_layout
+
+\begin_layout Itemize
+Observe that in the Euclidean action, the 
+\begin_inset Quotes eld
+\end_inset
+
+source
+\begin_inset Quotes erd
+\end_inset
+
+ term enters with a minus sign.
+\end_layout
+
+\begin_layout Itemize
+Next, let us work out a few details about the 
+\emph on
+simple
+\emph default
+ harmonic oscillator (without the 
+\begin_inset Formula $\frac{g}{m!}x^{m}$
+\end_inset
+
+ term) which we have worked out in the previous exercise sheet about a 
+\emph on
+free
+\emph default
+ non-Euclidean particle:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\eta\left(t\right):=x\left(t\right)-x_{cl}\left(t\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+ satisfies the classical Euclidean equation of motion with source:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\ddot{x_{cl}}\left(t\right)+\omega^{2}x_{cl}\left(t\right)=J\left(t\right)$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+with boundary conditions 
+\begin_inset Formula $x_{cl}\left(t_{a}\right)=x_{a}=x_{cl}\left(t_{b}\right)=x_{b}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+ being 
+\begin_inset Quotes eld
+\end_inset
+
+quantum fulctuations
+\begin_inset Quotes erd
+\end_inset
+
+, which also satisfy 
+\begin_inset Formula $\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $S_{SHO}\left[x,\, J\right]=S_{SHO}\left[x_{cl},\, J\right]+S_{SHO}\left[\eta,\,0\right]$
+\end_inset
+
+
+\bar under
+
+\begin_inset Newline newline
+\end_inset
+
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $S_{SHO}\left[x,\, J\right]\equiv\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{x}^{2}+\frac{1}{2}\omega^{2}x^{2}-J\left(t\right)x\right]\stackrel{\mbox{plug in x}}{=}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dt\left\{ \frac{1}{2}\left[\dot{x_{cl}}\left(t\right)+\dot{\eta}\left(t\right)\right]^{2}+\frac{1}{2}\omega^{2}\left[x_{cl}\left(t\right)+\eta\left(t\right)\right]^{2}-J\left(t\right)\left[x_{cl}\left(t\right)+\eta\left(t\right)\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dt\left\{ \frac{1}{2}\left[\dot{x_{cl}}\left(t\right)^{2}+\dot{\eta}\left(t\right)^{2}+2\dot{x_{cl}}\left(t\right)\dot{\eta}\left(t\right)\right]+\frac{1}{2}\omega^{2}\left[x_{cl}\left(t\right)^{2}+\eta\left(t\right)^{2}+2x_{cl}\left(t\right)\eta\left(t\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int_{t_{a}}^{t_{b}}dt\left\{ -J\left(t\right)\left[x_{cl}\left(t\right)+\eta\left(t\right)\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dt\left\{ \frac{1}{2}\dot{x_{cl}}\left(t\right)^{2}+\frac{1}{2}\omega^{2}x_{cl}\left(t\right)^{2}-J\left(t\right)x_{cl}\left(t\right)+\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}+\dot{x_{cl}}\left(t\right)\dot{\eta}\left(t\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int_{t_{a}}^{t_{b}}dt\left\{ \omega^{2}x_{cl}\left(t\right)\eta\left(t\right)-J\left(t\right)\eta\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S_{SHO}\left[x_{cl},\, J\right]+S_{SHO}\left[\eta,\,0\right]+\int_{t_{a}}^{t_{b}}dt\left\{ \dot{x_{cl}}\left(t\right)\dot{\eta}\left(t\right)+\omega^{2}x_{cl}\left(t\right)\eta\left(t\right)-J\left(t\right)\eta\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S_{SHO}\left[x_{cl},\, J\right]+S_{SHO}\left[\eta,\,0\right]+\left.\left[\dot{x_{cl}}\left(t\right)\eta\left(t\right)\right]\right|_{t_{a}}^{t_{b}}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int_{t_{a}}^{t_{b}}dt\left\{ -\ddot{x_{cl}}\left(t\right)\eta\left(t\right)+\omega^{2}x_{cl}\left(t\right)\eta\left(t\right)-J\left(t\right)\eta\left(t\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now use the fact that 
+\begin_inset Formula $\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0$
+\end_inset
+
+ to ascertain that 
+\begin_inset Formula $\left.\left[\dot{x_{cl}}\left(t\right)\eta\left(t\right)\right]\right|_{t_{a}}^{t_{b}}=0$
+\end_inset
+
+ and the fact that 
+\begin_inset Formula $-\ddot{x}_{cl}\left(t\right)+\omega^{2}x_{cl}\left(t\right)=J\left(t\right)$
+\end_inset
+
+ by definition of the classical path 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+, and so we are left with:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S_{SHO}\left[x_{cl},\, J\right]+S_{SHO}\left[\eta,\,0\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\mathcal{Z}_{SHO}\left[J\right]=\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\exp\left\{ -S_{SHO}\left[x_{cl},\, J\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{Z}_{SHO}\left[J\right]\equiv\int_{x_{a}=0}^{x_{b}=0}\mathcal{D}x\,\exp\left\{ -S_{SHO}\left[x,\, J\right]\right\} \stackrel{\mbox{(a)}}{=}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{x_{a}=0}^{x_{b}=0}\mathcal{D}x\,\exp\left\{ -\left\{ S_{SHO}\left[x_{cl},\, J\right]+S_{SHO}\left[\eta,\,0\right]\right\} \right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+ is a constant path (determined by the equations of motion) which doesn't
+ vary during the integration process, so we can pull it out of the integral:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ -S_{SHO}\left[x_{cl},\, J\right]\right\} \times\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}x\,\exp\left\{ -S_{SHO}\left[\eta,\,0\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now we make a 
+\begin_inset Quotes eld
+\end_inset
+
+change of variable
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $x\left(t\right)\mapsto x\left(t\right)-x_{cl}\left(t\right)=\eta\left(t\right)$
+\end_inset
+
+.
+ Since 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\mathcal{D}x_{cl}=0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\mathcal{D}x=\mathcal{D}\eta$
+\end_inset
+
+.
+ (this needs more mathematical rigor) So we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ -S_{SHO}\left[x_{cl},\, J\right]\right\} \times\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}\eta\,\exp\left\{ -S_{SHO}\left[\eta,\,0\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ -S_{SHO}\left[x_{cl},\, J\right]\right\} \times\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}\eta\,\exp\left\{ -\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How to compute 
+\begin_inset Formula $\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}\eta\,\exp\left\{ -\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]\right\} $
+\end_inset
+
+? We have been asked already to compute this expression in HW1Q3, but we
+ didn't finish the job then because it was too complicated.
+ Here we present an alternative solution (from Arkady Vainshtein):
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)\dot{\eta}\left(t\right)+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\underbrace{\left.\frac{1}{2}\dot{\eta}\left(t\right)\eta\left(t\right)\right|_{t_{a}}^{t_{b}}}_{\mbox{zero by B.C. for}\eta}+\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\left[-\ddot{\eta}\left(t\right)\eta\left(t\right)+\omega^{2}\eta\left(t\right)^{2}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=+\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\eta\left(t\right)\left[-\frac{d^{2}}{dt^{2}}+\omega^{2}\right]\eta\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\left\{ y_{n}\left(t\right)\right\} _{n\in\mathbb{N}}$
+\end_inset
+
+ be a complete orthonormal set of eigenvectors of 
+\begin_inset Formula $-\frac{d^{2}}{dt^{2}}+\omega^{2}$
+\end_inset
+
+ which vanish at 
+\begin_inset Formula $t_{a}$
+\end_inset
+
+ and at 
+\begin_inset Formula $t_{b}$
+\end_inset
+
+: 
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}y_{n}\left(t\right)y_{l}\left(t\right)dt=\delta_{nl}$
+\end_inset
+
+.
+ We know the eigenvalues have to be 
+\begin_inset Formula $\left(\frac{\pi n}{t_{b}-t_{a}}\right)^{2}+\omega^{2}=:\lambda_{n}$
+\end_inset
+
+ (Plug in the eigenvectors--simply sines and cosines--and impose the boundary
+ conditions).
+\end_layout
+
+\begin_layout Itemize
+Write 
+\begin_inset Formula $\eta\left(t\right)=\sum_{n\in\mathbb{N}}c_{n}y_{n}\left(t\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $c_{n}\in\mathbb{R}$
+\end_inset
+
+ are the expansion coefficients of 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}\eta\,\exp\left\{ -\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int dc_{0}\int dc_{1}\dots\exp\left\{ -\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\sum_{n\in\mathbb{N}}c_{n}y_{n}\left(t\right)\left[-\frac{d^{2}}{dt^{2}}+\omega^{2}\right]\sum_{l\in\mathbb{N}}c_{l}y_{l}\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+ is some normalization coefficient which we will determine soon.
+ In this step we are integrating over all functions 
+\begin_inset Formula $\eta$
+\end_inset
+
+ by integrating over all coefficients in its expansion.
+ In a way this is the most concrete perspective on the path integral.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int dc_{0}\int dc_{1}\dots\exp\left\{ -\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\sum_{\left(n,l\right)\in\mathbb{N}^{2}}c_{n}c_{l}y_{n}\left(t\right)\left[-\frac{d^{2}}{dt^{2}}+\omega^{2}\right]y_{l}\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int dc_{0}\int dc_{1}\dots\exp\left\{ -\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\sum_{\left(n,l\right)\in\mathbb{N}^{2}}c_{n}c_{l}y_{n}\left(t\right)\lambda_{l}y_{l}\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int dc_{0}\int dc_{1}\dots\exp\left\{ -\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\sum_{\left(n,l\right)\in\mathbb{N}^{2}}c_{n}c_{l}y_{n}\left(t\right)\lambda_{l}y_{l}\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int dc_{0}\int dc_{1}\dots\exp\left\{ -\frac{1}{2}\sum_{n\in\mathbb{N}}c_{n}^{2}\lambda_{n}\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\prod_{n\in\mathbb{N}}\left[\int dc_{n}\exp\left(-\frac{1}{2}c_{n}^{2}\lambda_{n}\right)\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But 
+\begin_inset Formula $\int_{\mathbb{R}}dc_{n}\exp\left(-\frac{1}{2}c_{n}^{2}\lambda_{n}\right)$
+\end_inset
+
+ is easy as pie to compute: it's a mere Gaussian integral.
+ From HW1Q1 we have 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{-ax^{2}}=\sqrt{\frac{\pi}{a}}$
+\end_inset
+
+ and so 
+\begin_inset Formula $\int_{\mathbb{R}}dc_{n}\exp\left(-\frac{1}{2}c_{n}^{2}\lambda_{n}\right)=\sqrt{\frac{\pi}{\lambda_{n}/2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+So we are left with:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\prod_{n\in\mathbb{N}}\left(\sqrt{2\pi}\lambda_{n}^{-1/2}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\left(\prod_{n\in\mathbb{N}}\sqrt{2\pi}\right)\prod_{n\in\mathbb{N}}\left[\left(\left(\frac{\pi n}{t_{b}-t_{a}}\right)^{2}+\omega^{2}\right)^{-1/2}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\underbrace{\mathcal{N}\left(\prod_{n\in\mathbb{N}}\sqrt{2\pi}\left(\frac{t_{b}-t_{a}}{\pi n}\right)\right)}_{\mbox{free theory}}\underbrace{\left\{ \prod_{n\in\mathbb{N}}\left[\left(1+\left(\frac{\omega\left(t_{b}-t_{a}\right)}{\pi n}\right)^{2}\right)^{-1/2}\right]\right\} }_{\mbox{addition because }\omega\neq0}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can use this decomposition now to 
+\emph on
+define
+\emph default
+ 
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+ such that it gives us the expected result for the free theory.
+\end_layout
+
+\begin_layout Itemize
+The expected result for the free theory is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{N}\left(\prod_{n\in\mathbb{N}}\sqrt{2\pi}\left(\frac{t_{b}-t_{a}}{\pi n}\right)\right)\stackrel{!}{=}\Braket{x=0|e^{-\frac{\hat{p}^{2}}{2}\left(t_{b}-t_{a}\right)}|x=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x=0|e^{-\frac{\hat{p}^{2}}{2}\left(t_{b}-t_{a}\right)}\mathds{1}|x=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x=0|e^{-\frac{\hat{p}^{2}}{2}\left(t_{b}-t_{a}\right)}\int_{\mathbb{R}}dp\Ket{p}\Bra{p}|x=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}}dpe^{-\frac{p^{2}}{2}\left(t_{b}-t_{a}\right)}\left|\Braket{x=0|p}\right|^{2}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}}dpe^{-\frac{p^{2}}{2}\left(t_{b}-t_{a}\right)}\left|\Braket{x=0|p}\right|^{2}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}}dpe^{-\frac{p^{2}}{2}\left(t_{b}-t_{a}\right)}\left|\frac{e^{\frac{i}{\hbar}p\cdot0}}{\sqrt{2\pi}}\right|^{2}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi}\int_{\mathbb{R}}dpe^{-\frac{p^{2}}{2}\left(t_{b}-t_{a}\right)}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi}\sqrt{\frac{\pi}{\left(t_{b}-t_{a}\right)/2}}=\sqrt{\frac{1}{2\pi\left(t_{b}-t_{a}\right)}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What about the other, nasty looking part, 
+\begin_inset Formula $\prod_{n\in\mathbb{N}}\left[\left(1+\left(\frac{\omega\left(t_{b}-t_{a}\right)}{\pi n}\right)^{2}\right)^{-1/2}\right]$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\prod_{n\in\mathbb{N}}\left[\left(1+\left(\frac{\omega\left(t_{b}-t_{a}\right)}{\pi n}\right)^{2}\right)\right]=\frac{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}{\omega\left(t_{b}-t_{a}\right)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ ...
+ (took from table of integrals infinite series and products by Gradshtein
+ and Ryzhik)
+\end_layout
+
+\begin_layout Itemize
+Thus we find all together that 
+\begin_inset Formula $\int_{\left\{ \eta:\,\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0\right\} }\mathcal{D}\eta\,\exp\left\{ -\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{\eta}\left(t\right)^{2}+\frac{1}{2}\omega^{2}\eta\left(t\right)^{2}\right]\right\} =\sqrt{\frac{1}{2\pi\left(t_{b}-t_{a}\right)}}\left(\frac{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}{\omega\left(t_{b}-t_{a}\right)}\right)^{-1/2}=\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $S_{SHO}\left[x_{cl},\, J\right]=-\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'\, J\left(t\right)G\left(t,\, t'\right)J\left(t'\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $G\left(t,\, t'\right)$
+\end_inset
+
+ is the Green's function of 
+\begin_inset Formula $-\frac{d^{2}}{dt^{2}}+\omega^{2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We start from 
+\begin_inset Formula $S_{SHO}\left[x_{cl},\, J\right]\equiv\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}\dot{x_{cl}}^{2}+\frac{1}{2}\omega^{2}x_{cl}^{2}-Jx_{cl}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We integrate 
+\begin_inset Formula $\dot{x_{cl}}^{2}\equiv\dot{x_{cl}}\dot{x_{cl}}$
+\end_inset
+
+ by parts:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\underbrace{\left.\frac{1}{2}mx_{cl}\dot{x_{cl}}\right|_{t_{a}}^{t_{b}}}_{\mbox{zero as }x_{cl}\mbox{ is zero on the boundaries}}+\int_{t_{a}}^{t_{b}}dt\left[-\frac{1}{2}\ddot{x_{cl}}x_{cl}+\frac{1}{2}\omega^{2}x_{cl}^{2}-Jx_{cl}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dtx_{cl}\left[-\frac{1}{2}\ddot{x_{cl}}+\frac{1}{2}\omega^{2}x_{cl}-J\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use the classical equation of motion which says 
+\begin_inset Formula $-\ddot{x_{cl}}+\omega^{2}x_{cl}=J$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dtx_{cl}\left[\frac{1}{2}J-J\right]=-\frac{1}{2}\int_{t_{a}}^{t_{b}}dtx_{cl}J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use the relation 
+\begin_inset Formula $x_{cl}\left(t\right)=\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)$
+\end_inset
+
+, which is 
+\emph on
+the
+\emph default
+ defining property of the Green's function of 
+\begin_inset Formula $-\frac{d^{2}}{dt^{2}}+\omega^{2}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)J\left(t\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)J\left(t\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Next, we have computed 
+\begin_inset Formula $G\left(t,\, t'\right)$
+\end_inset
+
+ in HW2Q3 and found that 
+\begin_inset Formula $G\left(t,\, t'\right)=\frac{1}{2\omega}e^{-\omega\left|t-t'\right|}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+All together we have found then that
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $\boxed{\mathcal{Z}_{SHO}\left[J\right]=\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\exp\left\{ \frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'\frac{1}{2\omega}e^{-\omega\left|t-t'\right|}J\left(t'\right)J\left(t\right)\right\} }$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+For later it will be helpful to compute the following quantity:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\mathcal{Z}_{SHO}\left[0\right]=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{\pi}\frac{e^{-\omega\left(t_{b}-t_{a}\right)}}{1-e^{-2\omega\left(t_{b}-t_{a}\right)}}}\approx$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\approx\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\left(1+\frac{1}{2}\mathcal{O}\left(e^{-2\omega\left(t_{b}-t_{a}\right)}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now we may finally begin to deal with the 
+\emph on
+anharmonic 
+\emph default
+oscillator:
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\mathcal{Z}\left[J\right]=\mathcal{Z}_{SHO}\left[J\right]-\frac{g}{m!}\int dt'\frac{\delta^{m}}{\delta J\left(t'\right)^{m}}\mathcal{Z}_{SHO}\left[J\right]+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathcal{Z}\left[J\right]\equiv\mathcal{N}\int\mathcal{D}x\exp\left\{ -\int dt\left[\left(\frac{1}{2}\dot{x}^{2}+\frac{1}{2}\omega^{2}x^{2}+\frac{g}{m!}x^{m}\right)+Jx\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\exp\left\{ -\underbrace{\int dt\left(\frac{1}{2}\dot{x}^{2}+\frac{1}{2}\omega^{2}x^{2}\right)}_{S_{SHO}\left[x\right]}-\underbrace{\int dt\left(\frac{g}{m!}x^{m}\right)}_{S_{int}\left[x\right]}+\int dtJx\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\exp\left\{ -S_{int}\left[x\right]\right\} \exp\left\{ -S_{SHO}\left[x\right]+\int dtJx\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\exp\left(-\frac{g}{m!}\int dtx^{m}\right)\exp\left\{ -S_{SHO}\left[x\right]+\int dtJx\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\left(1-\frac{g}{m!}\int dtx^{m}+\mathcal{O}\left(g^{2}\right)\right)\exp\left\{ -S_{SHO}\left[x\right]+\int dtJx\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\exp\left\{ -S_{SHO}\left[x\right]+\int dtJx\right\} -\frac{g}{m!}\int dt'\mathcal{N}\int\mathcal{D}x\, x\left(t'\right)^{m}\exp\left\{ -S_{SHO}\left[x\right]+\int dtJx\right\} +\mathcal{O}\left(g^{2}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{Z}_{SHO}\left[J\right]-\frac{g}{m!}\int dt'\frac{\delta^{m}}{\delta J\left(t'\right)^{m}}\mathcal{Z}_{SHO}\left[J\right]+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In order to compute the 
+\emph on
+ground state energy
+\emph default
+ we will employ a trick:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ be the quantum mechanical operator associated with the above given Lagrangian
+ 
+\begin_inset Formula $L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ has some discrete spectrum: 
+\begin_inset Formula $\hat{H}\Ket{n}=E_{n}\Ket{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $\Braket{x_{f}|e^{-\hat{H}T}|x_{i}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x_{f}|e^{-\hat{H}T}\mathds{1}|x_{i}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x_{f}|e^{-\hat{H}T}\sum_{n}\Ket{n}\Bra{n}|x_{i}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x_{f}|\sum_{n}e^{-E_{n}T}\Ket{n}\Bra{n}|x_{i}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sum_{n}e^{-E_{n}T}\Braket{x_{f}|n}\Braket{n|x_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next, pick 
+\begin_inset Formula $x_{f}=x_{i}=0$
+\end_inset
+
+.
+ Then denote the wave function 
+\begin_inset Formula $\Braket{x=0|n}$
+\end_inset
+
+ by 
+\begin_inset Formula $\psi_{n}\left(0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\lim_{T\to\infty}\Braket{x=0|e^{-\hat{H}T}|x=0}=\lim_{T\to\infty}\sum_{n}e^{-E_{n}T}\left|\psi_{n}\left(0\right)\right|^{2}\approx\lim_{T\to\infty}e^{-E_{0}T}\left|\psi_{0}\left(0\right)\right|^{2}$
+\end_inset
+
+ where 
+\begin_inset Formula $E_{0}:=\min\left\{ E_{n}|n\right\} $
+\end_inset
+
+, assuming such a minimum indeed exists.
+ The preceding approximate equal sign is true in the sense that for large
+ values of 
+\begin_inset Formula $T$
+\end_inset
+
+, 
+\begin_inset Formula $e^{-E_{0}T}$
+\end_inset
+
+ is the dominant term in the sum.
+\end_layout
+
+\begin_layout Itemize
+Thus we have obtained the following formula:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\lim_{T\to\infty}e^{-E_{0}T}\left|\psi_{0}\left(0\right)\right|^{2}\approx\lim_{T\to\infty}\mathcal{N}\int\mathcal{D}x\,\exp\left\{ -S\left[x\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+where the path integral is on paths that start and end at 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+More explicitly,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\lim_{T\to\infty}e^{-E_{0}T}\left|\psi_{0}\left(0\right)\right|^{2}\approx\mathcal{N}\int_{x\left(\pm\infty\right)\stackrel{!}{=}0}\mathcal{D}x\,\exp\left\{ -\int_{-\infty}^{\infty}dt\, L\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ If 
+\begin_inset Formula $m=4$
+\end_inset
+
+ the ground state of the energy is given by 
+\begin_inset Formula $E_{0}=\frac{1}{2}\omega+\frac{g}{32\omega^{2}}+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+So we would like to compute now 
+\begin_inset Formula $\mathcal{N}\int_{x\left(\pm\infty\right)\stackrel{!}{=}0}\mathcal{D}x\,\exp\left\{ -\int_{-\infty}^{\infty}dt\, L\right\} $
+\end_inset
+
+, as, by the above, that would give us the ground state energy and its correspon
+ding ground state wave function evaluated at 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+ This is by definition 
+\begin_inset Formula $\left.\mathcal{Z}\left[J\right]\right|_{J=0}$
+\end_inset
+
+ evaluated at 
+\begin_inset Formula $\left(t_{a},\, t_{b}\right)=\left(-\infty,\,\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left.\mathcal{Z}\left[J\right]\right|_{J=0}=\mathcal{Z}_{SHO}\left[0\right]-\left.\left\{ \frac{g}{4!}\int_{\mathbb{R}}dt'\frac{\delta^{4}}{\delta J\left(t'\right)^{4}}\mathcal{Z}_{SHO}\left[J\right]\right\} \right|_{J=0}+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+For 
+\begin_inset Formula $\mathcal{Z}_{SHO}\left[0\right]$
+\end_inset
+
+ we have already computed the value above to be 
+\begin_inset Formula $\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\left(1+\frac{1}{2}\mathcal{O}\left(e^{-2\omega\left(t_{b}-t_{a}\right)}\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\left.\left\{ \int_{\mathbb{R}}dt'\frac{\delta^{4}}{\delta J\left(t'\right)^{4}}\mathcal{Z}_{SHO}\left[J\right]\right\} \right|_{J=0}=3\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\sqrt{\frac{\omega}{2\pi sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\int_{t_{a}}^{t_{b}}dt'\left[G\left(t'-t'\right)\right]^{2}$
+\end_inset
+
+ (this is like Wick's theorem for QM)
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left.\left\{ \int_{t_{a}}^{t_{b}}dt'\frac{\delta^{4}}{\delta J\left(t'\right)^{4}}\mathcal{Z}_{SHO}\left[J\right]\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\frac{\delta^{4}}{\delta J\left(t''\right)^{4}}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\exp\left\{ \frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)J\left(t\right)\right\} \right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\frac{\delta^{3}}{\delta J\left(t''\right)^{3}}\exp\left\{ \dots\right\} \left\{ \frac{1}{2}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)\left[\delta\left(t''-t'\right)J\left(t\right)+\delta\left(t''-t\right)J\left(t'\right)\right]\right\} \right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\frac{\delta^{3}}{\delta J\left(t''\right)^{3}}\exp\left\{ \dots\right\} \int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Use the product rule for the 
+\begin_inset Formula $3^{\mbox{rd}}$
+\end_inset
+
+ derivative: 
+\begin_inset Formula $\left(fg\right)'''=\sum_{k=0}^{3}\frac{3!}{k!\left(3-k\right)!}f^{\left(3-k\right)}g^{\left(k\right)}=f'''g+3f''g'+3f'g''+fg'''$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\frac{\delta^{3}}{\delta J\left(t''\right)^{3}}\exp\left\{ \dots\right\} \right)\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\exp\left\{ \dots\right\} \frac{\delta^{3}}{\delta J\left(t''\right)^{3}}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+3\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\frac{\delta^{2}}{\delta J\left(t''\right)^{2}}\exp\left\{ \dots\right\} \right)\frac{\delta}{\delta J\left(t''\right)}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+3\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\frac{\delta}{\delta J\left(t''\right)}\exp\left\{ \dots\right\} \right)\frac{\delta^{2}}{\delta J\left(t''\right)^{2}}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+We can already get rid of the first term as it will vanish when setting
+ 
+\begin_inset Formula $J=0$
+\end_inset
+
+.
+ The term 
+\begin_inset Formula $\frac{\delta^{3}}{\delta J\left(t''\right)^{3}}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)=0$
+\end_inset
+
+ because there aren't enough powers of 
+\begin_inset Formula $J$
+\end_inset
+
+, likewise 
+\begin_inset Formula $\frac{\delta^{2}}{\delta J\left(t''\right)^{2}}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)=0$
+\end_inset
+
+.
+ Thus we are left with:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times3\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\frac{\delta^{2}}{\delta J\left(t''\right)^{2}}\exp\left\{ \dots\right\} \right)\frac{\delta}{\delta J\left(t''\right)}\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times3\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\frac{\delta}{\delta J\left(t''\right)}\exp\left\{ \dots\right\} \int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)\right)G\left(t'',\, t''\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times3\left.\left\{ \int_{t_{a}}^{t_{b}}dt''\left(\left(\frac{\delta}{\delta J\left(t''\right)}\exp\left\{ \dots\right\} \right)\int_{t_{a}}^{t_{b}}dtG\left(t,\, t''\right)J\left(t\right)+\exp\left\{ \dots\right\} G\left(t'',\, t''\right)\right)G\left(t'',\, t''\right)\right\} \right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\sqrt{\frac{\omega}{2\pi}\frac{1}{sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}}3\int_{t_{a}}^{t_{b}}dt''G\left(t'',\, t''\right)^{2}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In general it is (probably?) possible to prove the full Wick's theorem for
+ quantum mechanics in this fashion.
+\end_layout
+
+\begin_layout Enumerate
+But what is 
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt'\left[G\left(t'-t'\right)\right]^{2}$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt'\left[G\left(t'-t'\right)\right]^{2}=\int_{t_{a}}^{t_{b}}dt'\frac{1}{4\omega^{2}}=\frac{t_{b}-t_{a}}{4\omega^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Thus we find 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left.\mathcal{Z}\left[J\right]\right|_{J=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\left(1+\frac{1}{2}\mathcal{O}\left(e^{-2\omega\left(t_{b}-t_{a}\right)}\right)\right)\left(1-\frac{g}{4!}3\frac{t_{b}-t_{a}}{4\omega^{2}}+\mathcal{O}\left(g^{2}\right)\right)\approx$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\approx\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\left(1+\frac{1}{2}\mathcal{O}\left(e^{-2\omega\left(t_{b}-t_{a}\right)}\right)\right)\left(\exp\left\{ -g\frac{t_{b}-t_{a}}{32\omega^{2}}\right\} +\mathcal{O}\left(g^{2}\right)\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\left(\frac{\omega}{2}+\frac{g}{32\omega^{2}}\right)\left(t_{b}-t_{a}\right)}\left(1+\frac{1}{2}\mathcal{O}\left(e^{-2\omega\left(t_{b}-t_{a}\right)}\right)\right)+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+By comparing this result to 
+\begin_inset Formula $\lim_{T\to\infty}e^{-E_{0}T}\left|\psi_{0}\left(0\right)\right|^{2}$
+\end_inset
+
+, to which it is equal by the above, we find that 
+\begin_inset Formula $\boxed{E_{0}=\frac{\omega}{2}+\frac{g}{32\omega^{2}}+\mathcal{O}\left(g^{2}\right)}$
+\end_inset
+
+, and that 
+\begin_inset Formula $\left|\psi_{0}\left(0\right)\right|^{2}=\sqrt{\frac{\omega}{\pi}}+\mathcal{O}\left(g^{2}\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ If 
+\begin_inset Formula $m=3$
+\end_inset
+
+ the ground state of the energy is given by 
+\begin_inset Formula $E_{0}=\frac{1}{2}\omega-\frac{11}{288}\frac{g^{2}}{\omega^{4}}+\mathcal{O}\left(g^{4}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+We save the best for the last: because 
+\begin_inset Formula $m=3$
+\end_inset
+
+, we have three functional derivatives in the term of order 
+\begin_inset Formula $\mathcal{O}\left(g\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $\mathcal{Z}\left[J\right]$
+\end_inset
+
+.
+ Three derivatives will always be zero because 
+\begin_inset Quotes eld
+\end_inset
+
+we will always have an uncontracted term vanishing on the vacuum
+\begin_inset Quotes erd
+\end_inset
+
+ (in the language of QFT's Wick's theorem) or rather because we will always
+ be left with a term linear in 
+\begin_inset Formula $J$
+\end_inset
+
+ which will vanish when setting 
+\begin_inset Formula $J=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Thus to see any effects we must go to 
+\begin_inset Formula $\mathcal{O}\left(g^{2}\right):$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}\left[J\right]=\mathcal{Z}_{SHO}\left[J\right]+\frac{1}{2}\left(-\frac{g}{3!}\int dt'\frac{\delta^{3}}{\delta J\left(t'\right)^{3}}\mathcal{Z}_{SHO}\left[J\right]\right)^{2}+\mathcal{O}\left(g^{4}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\left(\int dt'\frac{\delta^{3}}{\delta J\left(t'\right)^{3}}\mathcal{Z}_{SHO}\left[J\right]\right)^{2}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\frac{\omega}{2\pi sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}\int dt'\int dt''\left[9G\left(t'',t''\right)G\left(t',\, t''\right)G\left(t',\, t'\right)+36G\left(t',\, t''\right)^{3}\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ ...
+ (later)
+\end_layout
+
+\begin_layout Enumerate
+Then we get two integrals:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt'\int_{t_{a}}^{t_{b}}dt''\left[36G\left(t',\, t''\right)^{3}\right]=36\frac{\left(t_{b}-t_{a}\right)^{2}}{\left(2\omega\right)^{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int dt'\int dt''\left[G\left(t'',t''\right)G\left(t',\, t''\right)G\left(t',\, t'\right)\right]=9\frac{1}{\left(2\omega\right)^{3}}\int dt'\int dt''e^{-\omega\left|t'-t''\right|}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt''e^{-\omega\left|t'-t''\right|}\stackrel{\tau:=t''-t'}{=}\int_{t_{a}-t'}^{t_{b}-t'}d\tau e^{-\omega\left|\tau\right|}\stackrel{t'\in\left[t_{a},\, t_{b}\right]}{=}\int_{t_{a}-t'}^{0}d\tau e^{-\omega\left|\tau\right|}+\int_{0}^{t_{b}-t'}d\tau e^{-\omega\left|\tau\right|}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}-t'}^{0}d\tau e^{\omega\tau}+\int_{0}^{t_{b}-t'}d\tau e^{-\omega\tau}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{\omega}\left[1-e^{\omega\left(t_{a}-t'\right)}+1-e^{-\omega\left(t_{b}-t'\right)}\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{t_{a}}^{t_{b}}dt'\frac{1}{\omega}\left[1-e^{\omega\left(t_{a}-t'\right)}+1-e^{-\omega\left(t_{b}-t'\right)}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{2}{\omega^{2}}\left[-1+e^{-\omega\left(t_{b}-t_{a}\right)}+\omega\left(t_{b}-t_{a}\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus we get 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}\left[0\right]=\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}\{\mathcal{Z}_{SHO}\left[0\right]+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\frac{1}{2}\frac{g^{2}}{36}\frac{\omega}{2\pi sinh\left(\omega\left(t_{b}-t_{a}\right)\right)}\left\{ 36\frac{\left(t_{b}-t_{a}\right)^{2}}{\left(2\omega\right)^{3}}+9\frac{1}{\left(2\omega\right)^{3}}\frac{2}{\omega^{2}}\left[-1+e^{-\omega\left(t_{b}-t_{a}\right)}+\omega\left(t_{b}-t_{a}\right)\right]\right\} +\mathcal{O}\left(g^{4}\right)\}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\left(1+\sqrt{\frac{\omega}{\pi}}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\frac{1}{2}\frac{g^{2}}{36}\left\{ 36\frac{\left(t_{b}-t_{a}\right)^{2}}{\left(2\omega\right)^{3}}+9\frac{1}{\left(2\omega\right)^{3}}\frac{2}{\omega^{2}}\left[-1+e^{-\omega\left(t_{b}-t_{a}\right)}+\omega\left(t_{b}-t_{a}\right)\right]\right\} +\mathcal{O}\left(g^{4}\right)\right)\approx$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\left(1+\frac{1}{2}g^{2}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\frac{1}{36}\sqrt{\frac{\omega}{\pi}}\left\{ 36\frac{\left(t_{b}-t_{a}\right)^{2}}{\left(2\omega\right)^{3}}+9\frac{1}{\left(2\omega\right)^{3}}\frac{2}{\omega^{2}}\left[-1+e^{-\omega\left(t_{b}-t_{a}\right)}+\omega\left(t_{b}-t_{a}\right)\right]\right\} +\mathcal{O}\left(g^{4}\right)\right)\approx$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{\omega}{\pi}}\lim_{\left(t_{a},\, t_{b}\right)\to\left(\infty,\,-\infty\right)}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\exp\left(\frac{g^{2}}{2}e^{-\frac{\omega}{2}\left(t_{b}-t_{a}\right)}\frac{1}{36}\sqrt{\frac{\omega}{\pi}}\left\{ 36\frac{\left(t_{b}-t_{a}\right)^{2}}{\left(2\omega\right)^{3}}+9\frac{1}{\left(2\omega\right)^{3}}\frac{2}{\omega^{2}}\left[-1+e^{-\omega\left(t_{b}-t_{a}\right)}+\omega\left(t_{b}-t_{a}\right)\right]\right\} +\mathcal{O}\left(g^{4}\right)\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+???
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

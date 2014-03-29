@@ -1,0 +1,1823 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\usepackage{dsfont}
+
+\usepackage{amsmath}
+
+\usepackage{slashed}
+\usepackage{breqn}
+% Add support for automatic equation breaking
+\gdef\wrap@breqn@environ#1#2{
+    \expandafter\let\csname breqn@oldbegin@#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\let\csname breqn@oldend@#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\gdef\csname breqn@begin@#1\endcsname{%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@oldbegin@#1\endcsname%
+        \begin{#2}%
+    }
+    \expandafter\gdef\csname breqn@end@#1\endcsname{%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@oldend@#1\endcsname%
+        \end{#2}%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname%
+    }
+    \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname
+    \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname
+}
+\wrap@breqn@environ{equation}{dmath}
+\wrap@breqn@environ{equation*}{dmath*}
+\global\let\[=\equation 
+\global\let\]=\endequation
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Solutions to Homework No.
+ 2 in Quantum Field Theory II
+\end_layout
+
+\begin_layout Author
+Jacob Shapiro
+\end_layout
+
+\begin_layout Enumerate
+Free Particle Two-Point Function I
+\begin_inset Newline newline
+\end_inset
+
+Calculate the two-point function 
+\begin_inset Formula $\Braket{x=0,\, t_{b}|\, T\left(\hat{x}\left(t\right)\hat{x}\left(t'\right)\right)\,|\, x=0,\, t_{a}}$
+\end_inset
+
+ for a free particle explicitly.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Some integral identities:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, x\,\exp\left(iax^{2}+ikx\right)=-\frac{k}{2a}\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+From the HW2Q1(b) we know that 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\,\exp\left(iax^{2}+ikx\right)=\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Differentiate both sides of the equation with respect to 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\frac{d}{dk}\int_{\mathbb{R}}dx\,\,\exp\left(iax^{2}+ikx\right)=-i\frac{k}{2a}\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "http://math.stackexchange.com/a/11716/61151"
+target "http://math.stackexchange.com/a/11716/61151"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\,\frac{d}{dk}\,\exp\left(iax^{2}+ikx\right)=-i\frac{k}{2a}\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, ix\,\exp\left(iax^{2}+ikx\right)=-i\frac{k}{2a}\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, x\,\exp\left(iax^{2}+ikx\right)=-\frac{k}{2a}\sqrt{\frac{i\pi}{a}}\exp\left(-\frac{ik^{2}}{4a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, x^{2}\, e^{iax^{2}}=-\frac{1}{2ia}\sqrt{\frac{i\pi}{a}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Starting from 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\,\exp\left(iax^{2}\right)=\sqrt{\frac{i\pi}{a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Differentiate both sides with respect to 
+\begin_inset Formula $a$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, ix^{2}\,\exp\left(iax^{2}\right)=\sqrt{\frac{i\pi}{1}}\left(-\frac{1}{2}\right)a^{-3/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Rearranging we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, x^{2}\,\exp\left(iax^{2}\right)=-\frac{1}{2ia}\sqrt{\frac{i\pi}{a}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{x=0,\, t=t_{b}\,|\,\hat{x}\left(t_{1}\right)\hat{x}\left(t_{2}\right)\,|\, x=0,\, t=t_{a}}=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left(t_{b}-t_{1}\right)\left(t_{2}-t_{a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Employ the definition 
+\begin_inset Formula $\hat{x}\left(t\right)\equiv\int_{\mathbb{R}}dx\, x\,\Ket{x,\, t}\Bra{x,\, t}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Braket{0,\, t_{b}\,|\,\hat{x}\left(t_{1}\right)\hat{x}\left(t_{2}\right)\,|\,0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{0,\, t_{b}\,|\,\left(\int_{\mathbb{R}}dx_{1}\, x_{1}\,\Ket{x_{1},\, t_{1}}\Bra{x_{1},\, t_{1}}\right)\left(\int_{\mathbb{R}}dx_{2}\, x_{2}\,\Ket{x_{2},\, t_{2}}\Bra{x_{2},\, t_{2}}\right)\,|\,0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}^{2}}dx_{1}\, dx_{2}\, x_{1}\, x_{2}\,\Braket{0,\, t_{b}\,|\,\,\Ket{x_{1},\, t_{1}}\Bra{x_{1},\, t_{1}}\,\Ket{x_{2},\, t}\Bra{x_{2},\, t}\,|\,0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}^{2}}dx_{1}\, dx_{2}\, x_{1}\, x_{2}\, K\left(0,\, x_{1};\, t_{b}-t_{1}\right)\, K\left(x_{1},\, x_{2};\, t_{1}-t_{2}\right)\, K\left(x_{2},\,0;\, t_{2}-t_{a}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Plug in the definition of the propagator of the free particle from HW1Q3
+ (
+\begin_inset Formula $K\left(x,\, x';\, t-t'\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t-t'\right)}}\exp\left[\frac{im\left(x-x'\right)^{2}}{2\hbar\left(t-t'\right)}\right]$
+\end_inset
+
+):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{\mathbb{R}^{2}}dx_{1}\, dx_{2}\, x_{1}\, x_{2}\,\sqrt{\frac{m}{i\left(t_{b}-t_{1}\right)2\pi\hbar}}\exp\left[\frac{im\left(0-x_{1}\right)^{2}}{2\hbar\left(t_{b}-t_{1}\right)}\right]\,\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\sqrt{\frac{m}{i\left(t_{1}-t_{2}\right)2\pi\hbar}}\exp\left[\frac{im\left(x_{1}-x_{2}\right)^{2}}{2\hbar\left(t_{1}-t_{2}\right)}\right]\,\sqrt{\frac{m}{i\left(t_{2}-t_{a}\right)2\pi\hbar}}\exp\left[\frac{im\left(x_{2}-0\right)^{2}}{2\hbar\left(t_{2}-t_{a}\right)}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)^{\frac{3}{2}}\left[\left(t_{b}-t_{1}\right)\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)\right]^{-\frac{1}{2}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}^{2}}dx_{1}\, dx_{2}\, x_{1}\, x_{2}\,\exp\left[\frac{im\, x_{1}^{2}}{2\hbar\left(t_{b}-t_{1}\right)}+\frac{im\left(x_{1}-x_{2}\right)^{2}}{2\hbar\left(t_{1}-t_{2}\right)}+\frac{im\, x_{2}^{2}}{2\hbar\left(t_{2}-t_{a}\right)}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)^{\frac{3}{2}}\left[\left(t_{b}-t_{1}\right)\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)\right]^{-\frac{1}{2}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}}dx_{1}\, x_{1}\,\exp\left[\frac{im\, x_{1}^{2}}{2\hbar\left(t_{b}-t_{1}\right)}\right]\int_{\mathbb{R}}dx_{2}\, x_{2}\,\exp\left[\frac{im\left(x_{1}-x_{2}\right)^{2}}{2\hbar\left(t_{1}-t_{2}\right)}+\frac{im\, x_{2}^{2}}{2\hbar\left(t_{2}-t_{a}\right)}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Rearrange the term in the exponent of the latter integral to get it to a
+ form of part (a):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\frac{\left(x_{1}-x_{2}\right)^{2}}{\left(t_{1}-t_{2}\right)}+\frac{\, x_{2}^{2}}{\left(t_{2}-t_{a}\right)}=\frac{\left(t_{1}-t_{a}\right)}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}x_{2}^{2}-\frac{2x_{1}}{\left(t_{1}-t_{2}\right)}x_{2}+\frac{1}{\left(t_{1}-t_{2}\right)}x_{1}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)^{\frac{3}{2}}\left[\left(t_{b}-t_{1}\right)\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)\right]^{-\frac{1}{2}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}}dx_{1}\, x_{1}\,\exp\left[\frac{im\, x_{1}^{2}}{2\hbar\left(t_{b}-t_{1}\right)}+\frac{im}{2\hbar}\frac{x_{1}^{2}}{\left(t_{1}-t_{2}\right)}\right]\int_{\mathbb{R}}dx_{2}\, x_{2}\,\exp\left[\frac{im}{2\hbar}\frac{\left(t_{1}-t_{a}\right)x_{2}^{2}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}+\frac{im}{2\hbar}\frac{-2x_{1}x_{2}}{\left(t_{1}-t_{2}\right)}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)^{\frac{3}{2}}\left[\left(t_{b}-t_{1}\right)\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)\right]^{-\frac{1}{2}}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}}dx_{1}\, x_{1}\,\exp\left[\frac{im\, x_{1}^{2}}{2\hbar}\left(\frac{1}{t_{b}-t_{1}}+\frac{1}{t_{1}-t_{2}}\right)\right]\int_{\mathbb{R}}dx_{2}\, x_{2}\,\exp\left[\frac{im}{2\hbar}\frac{\left(t_{1}-t_{a}\right)x_{2}^{2}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}+\frac{im}{\hbar}\frac{x_{1}x_{2}}{t_{2}-t_{1}}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now employ the results of the first integral of part (a) with 
+\begin_inset Formula $a:=\frac{m}{2\hbar}\frac{t_{1}-t_{a}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $k:=\frac{m}{\hbar}\frac{x_{1}}{t_{2}-t_{1}}$
+\end_inset
+
+ to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)^{\frac{3}{2}}\left[\left(t_{b}-t_{1}\right)\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)\right]^{-\frac{1}{2}}\int_{\mathbb{R}}dx_{1}\, x_{1}\,\exp\left[\frac{im\, x_{1}^{2}}{2\hbar}\left(\frac{1}{t_{b}-t_{1}}+\frac{1}{t_{1}-t_{2}}\right)\right]\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\left\{ -\frac{\left(\frac{m}{\hbar}\frac{x_{1}}{t_{2}-t_{1}}\right)}{2\left[\frac{m}{2\hbar}\frac{t_{1}-t_{a}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}\right]}\sqrt{\frac{i\pi}{\left[\frac{m}{2\hbar}\frac{t_{1}-t_{a}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}\right]}}\exp\left(-\frac{i\left(\frac{m}{\hbar}\frac{x_{1}}{t_{2}-t_{1}}\right)^{2}}{4\left[\frac{m}{2\hbar}\frac{t_{1}-t_{a}}{\left(t_{1}-t_{2}\right)\left(t_{2}-t_{a}\right)}\right]}\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)\left[\left(t_{1}-t_{a}\right)\left(t_{b}-t_{1}\right)\right]^{-\frac{1}{2}}\frac{t_{2}-t_{a}}{t_{1}-t_{a}}\int_{\mathbb{R}}dx_{1}\, x_{1}^{2}\,\exp\left[\frac{im\, x_{1}^{2}\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t_{1}\right)\left(t_{1}-t_{a}\right)}\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now employ the result of the second integral of part (a) with 
+\begin_inset Formula $a=\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t_{1}\right)\left(t_{1}-t_{a}\right)}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{m}{i2\pi\hbar}\right)\left[\left(t_{1}-t_{a}\right)\left(t_{b}-t_{1}\right)\right]^{-\frac{1}{2}}\frac{t_{2}-t_{a}}{t_{1}-t_{a}}\left\{ -\frac{1}{2i\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t_{1}\right)\left(t_{1}-t_{a}\right)}\right]}\sqrt{\frac{i\pi}{\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t_{1}\right)\left(t_{1}-t_{a}\right)}\right]}}\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+After some algebraic manipulations we arrive at:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left(t_{b}-t_{1}\right)\left(t_{2}-t_{a}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{x=0,\, t_{b}\,|\, T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\,|\, x=0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left[\theta\left(t-t'\right)\left(t_{b}-t\right)\left(t'-t_{a}\right)+\theta\left(t'-t\right)\left(t_{b}-t'\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The definition of the time ordered product is 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\equiv\theta\left(t'-t\right)\hat{x}\left(t'\right)\hat{x}\left(t\right)+\theta\left(t-t'\right)\hat{x}\left(t\right)\hat{x}\left(t'\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Thus using the results of part (b) we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Braket{x=0,\, t_{b}\,|\, T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\,|\, x=0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Braket{x=0,\, t_{b}\,|\,\left[\theta\left(t'-t\right)\hat{x}\left(t'\right)\hat{x}\left(t\right)+\theta\left(t-t'\right)\hat{x}\left(t\right)\hat{x}\left(t'\right)\right]\,|\, x=0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\theta\left(t'-t\right)\Braket{x=0,\, t_{b}\,|\,\hat{x}\left(t'\right)\hat{x}\left(t\right)\,|\, x=0,\, t_{a}}+\theta\left(t-t'\right)\Braket{x=0,\, t_{b}\,|\,\hat{x}\left(t\right)\hat{x}\left(t'\right)\,|\, x=0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\theta\left(t'-t\right)\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left(t_{b}-t'\right)\left(t-t_{a}\right)+\theta\left(t-t'\right)\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left(t_{b}-t\right)\left(t'-t_{a}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left[\theta\left(t-t'\right)\left(t_{b}-t\right)\left(t'-t_{a}\right)+\theta\left(t'-t\right)\left(t_{b}-t'\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+We are given the identity:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\text{\boxed{\Braket{x=0,\, t_{b}\,|\, T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\,|\, x=0,\, t_{a}}=\left(\frac{\hbar}{i}\right)^{2}\left.\left[\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\Braket{0,\, t_{b}\,|\,0,t_{a}}_{J}\right]\right|_{J\left(t\right)=0,\, J\left(t'\right)=0}}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{Z}\left[J\right]:=\Braket{0,\, t_{b}\,|\,0,t_{a}}_{J}=\int_{\mbox{all paths with both end points at x=0}}\mathcal{D}x\,\exp\left\{ \frac{i}{\hbar}S\left[x,\, J\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $S\left[x,\, J\right]=\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{x}^{2}+J\left(t\right)x\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Define 
+\begin_inset Formula $\eta\left(t\right):=x\left(t\right)-x_{cl}\left(t\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+ satisfies the equation of motion with boundary conditions 
+\begin_inset Formula $x_{cl}\left(t_{a}\right)=x_{a}=x_{cl}\left(t_{b}\right)=x_{b}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+ being 
+\begin_inset Quotes eld
+\end_inset
+
+quantum fulctuations
+\begin_inset Quotes erd
+\end_inset
+
+, which satisfy also 
+\begin_inset Formula $\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $S\left[x,\, J\right]=S\left[x_{cl},\, J\right]+S\left[\eta,\,0\right]$
+\end_inset
+
+
+\bar under
+
+\begin_inset Newline newline
+\end_inset
+
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $S\left[x,\, J\right]\equiv\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{x}^{2}+J\left(t\right)x\right]\stackrel{\mbox{plug in x}}{=}\int_{t_{a}}^{t_{b}}dt\left\{ \frac{1}{2}m\left[\dot{x_{cl}}\left(t\right)+\dot{\eta}\left(t\right)\right]^{2}+J\left(t\right)\left[x_{cl}\left(t\right)+\eta\left(t\right)\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{t_{a}}^{t_{b}}dt\left\{ \frac{1}{2}m\left[\dot{x_{cl}}\left(t\right)^{2}+\dot{\eta}\left(t\right)^{2}+2\dot{x_{cl}}\left(t\right)\dot{\eta}\left(t\right)\right]+J\left(t\right)\left[x_{cl}\left(t\right)+\eta\left(t\right)\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S\left[x_{cl},\, J\right]+S\left[\eta,\,0\right]+\int_{t_{a}}^{t_{b}}dt\left\{ m\dot{x_{cl}}\left(t\right)\dot{\eta}\left(t\right)+J\left(t\right)\eta\left(t\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S\left[x_{cl},\, J\right]+S\left[\eta,\,0\right]+\left.\left[m\dot{x_{cl}}\left(t\right)\eta\left(t\right)\right]\right|_{t_{a}}^{t_{b}}+\int_{t_{a}}^{t_{b}}dt\left\{ -m\ddot{x_{cl}}\left(t\right)\eta\left(t\right)+J\left(t\right)\eta\left(t\right)\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now use the fact that 
+\begin_inset Formula $\eta\left(t_{a}\right)=\eta\left(t_{b}\right)=0$
+\end_inset
+
+ to ascertain that 
+\begin_inset Formula $\left.\left[m\dot{x_{cl}}\left(t\right)\eta\left(t\right)\right]\right|_{t_{a}}^{t_{b}}=0$
+\end_inset
+
+ and the fact that 
+\begin_inset Formula $m\ddot{x}_{cl}\left(t\right)=J\left(t\right)$
+\end_inset
+
+ by definition of the classical path 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+, and so we are left with:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=S\left[x_{cl},\, J\right]+S\left[\eta,\,0\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\mathcal{Z}\left[J\right]=\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\exp\left\{ \frac{i}{\hbar}S\left[x_{cl},\, J\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathcal{Z}\left[J\right]\equiv\int_{x_{a}=0}^{x_{b}=0}\mathcal{D}x\,\exp\left\{ \frac{i}{\hbar}S\left[x,\, J\right]\right\} \stackrel{\mbox{(a)}}{=}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int_{x_{a}=0}^{x_{b}=0}\mathcal{D}x\,\exp\left\{ \frac{i}{\hbar}\left\{ S\left[x_{cl},\, J\right]+S\left[\eta,\,0\right]\right\} \right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+But 
+\begin_inset Formula $x_{cl}\left(t\right)$
+\end_inset
+
+ is a constant path (determined by the equations of motion) which doesn't
+ vary during the integration process, so we can pull it out of the integral:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ \frac{i}{\hbar}S\left[x_{cl},\, J\right]\right\} \times\int_{\mbox{paths that have both end points at zero}}\mathcal{D}x\,\exp\left\{ \frac{i}{\hbar}S\left[\eta,\,0\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now we make a 
+\begin_inset Quotes eld
+\end_inset
+
+change of variable
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $x\left(t\right)\mapsto x\left(t\right)-x_{cl}\left(t\right)=\eta\left(t\right)$
+\end_inset
+
+.
+ Since 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\mathcal{D}x_{cl}=0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\mathcal{D}x=\mathcal{D}\eta$
+\end_inset
+
+.
+ (this needs more mathematical rigor) So we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ \frac{i}{\hbar}S\left[x_{cl},\, J\right]\right\} \times\int_{\mbox{paths that have both end points at zero}}\mathcal{D}\eta\,\exp\left\{ \frac{i}{\hbar}S\left[\eta,\,0\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ \frac{i}{\hbar}S\left[x_{cl},\, J\right]\right\} \times\int_{\mbox{paths that have both end points at zero}}\mathcal{D}\eta\,\exp\left\{ \frac{i}{\hbar}\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{\eta}\left(t\right)^{2}\right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+But 
+\begin_inset Formula $\int_{\mbox{paths that have both end points at zero}}\mathcal{D}\eta\,\exp\left\{ \frac{i}{\hbar}\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{\eta}\left(t\right)^{2}\right]\right\} $
+\end_inset
+
+ is just the propagator for the free particle, with both end points at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, which have computed in HW1Q3: 
+\begin_inset Formula $\int\mathcal{D}\eta\,\exp\left\{ \frac{i}{\hbar}\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{\eta}\left(t\right)^{2}\right]\right\} =K_{\mbox{free particle}}\left(0,\,0;\, t_{b}-t_{a}\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\exp\left[\frac{im\left(0-0\right)^{2}}{2\hbar\left(t_{b}-t_{a}\right)}\right]=\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}$
+\end_inset
+
+ and so our result follows.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $S\left[x_{cl},\, J\right]=\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'\, J\left(t\right)G\left(t,\, t'\right)J\left(t'\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $G\left(t,\, t'\right)$
+\end_inset
+
+ is the Green's function of 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+We start from 
+\begin_inset Formula $S\left[x_{cl},\, J\right]\equiv\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\dot{x_{cl}}^{2}+Jx_{cl}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+We integrate 
+\begin_inset Formula $\dot{x_{cl}}^{2}\equiv\dot{x_{cl}}\dot{x_{cl}}$
+\end_inset
+
+ by parts:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\underbrace{\left.\frac{1}{2}mx_{cl}\dot{x_{cl}}\right|_{t_{a}}^{t_{b}}}_{\mbox{zero as }x_{cl}\mbox{ is zero on the boundaries}}-\int_{t_{a}}^{t_{b}}dt\left[\frac{1}{2}m\ddot{x_{cl}}x_{cl}-Jx_{cl}\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int_{t_{a}}^{t_{b}}dtx_{cl}\left[\frac{1}{2}m\ddot{x_{cl}}-J\right]\stackrel{\mbox{}}{=}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use the classical equation of motion which says 
+\begin_inset Formula $m\ddot{x_{cl}}=J$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int_{t_{a}}^{t_{b}}dtx_{cl}\left[\frac{1}{2}J-J\right]=\frac{1}{2}\int_{t_{a}}^{t_{b}}dtx_{cl}J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use the relation 
+\begin_inset Formula $x_{cl}\left(t\right)=\frac{1}{m}\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)$
+\end_inset
+
+, which is 
+\emph on
+the
+\emph default
+ defining property of the Green's function of 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2}\int_{t_{a}}^{t_{b}}dt\frac{1}{m}\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)J\left(t\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt\int_{t_{a}}^{t_{b}}dt'G\left(t,\, t'\right)J\left(t'\right)J\left(t\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $G\left(t,\, t'\right)=\left(t_{b}-t_{a}\right)^{-1}\left[\theta\left(t-t'\right)\left(t'-t_{a}\right)\left(t-t_{b}\right)+\theta\left(t'-t\right)\left(t'-t_{b}\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+ where the boundary conditions are such that 
+\begin_inset Formula $G\left(t_{a},\, t'\right)=G\left(t_{b},\, t'\right)=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Note that we are assuming that 
+\begin_inset Formula $t_{a}<t_{b}$
+\end_inset
+
+ and that 
+\begin_inset Formula $\left\{ t,\, t'\right\} \subseteq\left[t_{a},\, t_{b}\right]$
+\end_inset
+
+.
+ These assumptions stem from the physical setup of the calculation (a transition
+ amplitutde between two states (at 
+\begin_inset Formula $t_{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{b}$
+\end_inset
+
+), where something (at 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $t'$
+\end_inset
+
+) happens in the middle).
+\end_layout
+
+\begin_layout Enumerate
+The Green's function obeys: 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}G\left(t,\, t'\right)=\delta\left(t-t'\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Solve this equation in the region (I) where 
+\begin_inset Formula $t<t'$
+\end_inset
+
+, where we have 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}G_{I}\left(t,\, t'\right)=0$
+\end_inset
+
+ and so 
+\begin_inset Formula $G_{I}\left(t,\, t'\right)=A\left(t'\right)+B\left(t'\right)\cdot t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Similarly, in the region (II) where 
+\begin_inset Formula $t>t'$
+\end_inset
+
+ we get 
+\begin_inset Formula $G_{II}\left(t,\, t'\right)=C\left(t'\right)+D\left(t'\right)\cdot t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Employ the boundary conditions to get that
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $G_{I}\left(t_{a},\, t'\right)=A\left(t'\right)+B\left(t'\right)\cdot t_{a}\stackrel{!}{=}0$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{II}\left(t_{b},\, t'\right)=C\left(t'\right)+D\left(t'\right)\cdot t_{b}\stackrel{!}{=}0$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+(Note that each boundary condition applies to 
+\emph on
+either 
+\emph default
+I or II due to our assumptions about the ordering of 
+\begin_inset Formula $t_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $t_{b}$
+\end_inset
+
+, 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $t'$
+\end_inset
+
+).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Thus we have that
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $A\left(t'\right)=-B\left(t'\right)t_{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $C\left(t'\right)=-D\left(t'\right)t_{b}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+and so we can write 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $G_{I}\left(t,\, t'\right)=B\left(t'\right)\left(t-t_{a}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{II}\left(t,\, t'\right)=D\left(t'\right)\left(t-t_{b}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Assume that 
+\begin_inset Formula $G\left(t,\, t'\right)$
+\end_inset
+
+ is continuous at 
+\begin_inset Formula $t=t'$
+\end_inset
+
+, thus, 
+\begin_inset Formula $G_{I}\left(t,\, t\right)=G_{II}\left(t,\, t\right)$
+\end_inset
+
+ and so 
+\begin_inset Formula $B\left(t\right)\left(t-t_{a}\right)=D\left(t\right)\left(t-t_{b}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We can integrate the equation of the Green's function from 
+\begin_inset Formula $t'-\varepsilon$
+\end_inset
+
+ to 
+\begin_inset Formula $t'+\varepsilon$
+\end_inset
+
+ for some small 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ to get: 
+\begin_inset Formula $\int_{t'-\varepsilon}^{t'+\varepsilon}\frac{d^{2}}{dt^{2}}G\left(t,\, t'\right)dt=1$
+\end_inset
+
+.
+ Using the fundamental theorem of calculus we get 
+\begin_inset Formula $\frac{d}{dt}G_{II}\left(t',\, t'\right)-\frac{d}{dt}G_{I}\left(t',\, t'\right)=1$
+\end_inset
+
+ from whence we get another condition on 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $D$
+\end_inset
+
+: 
+\begin_inset Formula $D\left(t'\right)-B\left(t'\right)=1$
+\end_inset
+
+.
+ All together we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\begin{cases}
+B\left(t\right)\left(t-t_{a}\right)-D\left(t\right)\left(t-t_{b}\right)=0\\
+B\left(t\right)-D\left(t\right)=-1
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Thus we find that 
+\begin_inset Formula $D\left(t\right)=\frac{t-t_{a}}{t_{b}-t_{a}}$
+\end_inset
+
+ and so 
+\begin_inset Formula $B\left(t\right)=\frac{t-t_{a}}{t_{b}-t_{a}}-1=\frac{t-t_{b}}{t_{b}-t_{a}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+So finally 
+\begin_inset Formula $G\left(t,\, t'\right)=\left(t_{b}-t_{a}\right)^{-1}\left[\theta\left(t-t'\right)\left(t'-t_{a}\right)\left(t-t_{b}\right)+\theta\left(t'-t\right)\left(t'-t_{b}\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{x=0,\, t_{b}\,|\, T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\,|\, x=0,\, t_{a}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left[\theta\left(t-t'\right)\left(t_{b}-t\right)\left(t'-t_{a}\right)+\theta\left(t'-t\right)\left(t_{b}-t'\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(exactly what we found in the previous question using the explicit calculation)
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\Braket{x=0,\, t_{b}\,|\, T\left(\hat{x}\left(t'\right)\hat{x}\left(t\right)\right)\,|\, x=0,\, t_{a}}=\left(\frac{\hbar}{i}\right)^{2}\left.\left[\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\Braket{0,\, t_{b}\,|\,0,t_{a}}_{J}\right]\right|_{J\left(t\right)=0,\, J\left(t'\right)=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{\hbar}{i}\right)^{2}\left.\left[\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\mathcal{Z}\left[J\right]\right]\right|_{J\left(t\right)=0,\, J\left(t'\right)=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left(\frac{\hbar}{i}\right)^{2}\left.\left[\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\exp\left\{ \frac{i}{\hbar}S\left[x_{cl},\, J\right]\right\} \right]\right|_{J\left(t\right)=0,\, J\left(t'\right)=0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\left(\frac{\hbar}{i}\right)^{2}\left.\left[\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\exp\left\{ \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\, J\left(t_{1}\right)G\left(t_{1},\, t_{2}\right)J\left(t_{2}\right)\right\} \right]\right|_{J\left(t\right)=0,\, J\left(t'\right)=0}=$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+At this stage it would be a good time to carry out the functional derivatives:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\frac{\delta^{2}}{\delta J\left(t'\right)\delta J\left(t\right)}\exp\left\{ \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\, J\left(t_{1}\right)G\left(t_{1},\, t_{2}\right)J\left(t_{2}\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\frac{\delta}{\delta J\left(t\right)}\exp\left\{ \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\, J\left(t_{1}\right)G\left(t_{1},\, t_{2}\right)J\left(t_{2}\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{\delta}{\delta J\left(t\right)}\frac{i}{\hbar}\frac{1}{2}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\, J\left(t_{1}\right)G\left(t_{1},\, t_{2}\right)J\left(t_{2}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\,\frac{\delta}{\delta J\left(t\right)}J\left(t_{1}\right)G\left(t_{1},\, t_{2}\right)J\left(t_{2}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}\int_{t_{a}}^{t_{b}}dt_{2}\, G\left(t_{1},\, t_{2}\right)\left[\delta\left(t-t_{1}\right)J\left(t_{2}\right)+J\left(t_{1}\right)\delta\left(t-t_{2}\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{2m}\left[\int_{t_{a}}^{t_{b}}dt_{2}\, G\left(t,\, t_{2}\right)J\left(t_{2}\right)+\int_{t_{a}}^{t_{b}}dt_{1}\, G\left(t_{1},\, t\right)J\left(t_{1}\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{2m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)\left[\, G\left(t,\, t_{1}\right)+\, G\left(t_{1},\, t\right)\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+However, note that 
+\begin_inset Formula $G\left(t,\, t_{1}\right)=G\left(t_{1},\, t\right)$
+\end_inset
+
+ for Green's functions, so that we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} +\exp\left\{ \dots\right\} \frac{\delta}{\delta J\left(t'\right)}\frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The first term is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)\frac{\delta}{\delta J\left(t'\right)}\exp\left\{ \dots\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{2}J\left(t_{2}\right)G\left(t',\, t_{2}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+When we will set 
+\begin_inset Formula $J\left(t\right)=J\left(t'\right)=0$
+\end_inset
+
+, this term will vanish.
+\end_layout
+
+\begin_layout Enumerate
+The second term is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\exp\left\{ \dots\right\} \frac{\delta}{\delta J\left(t'\right)}\frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}J\left(t_{1}\right)G\left(t,\, t_{1}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{m}\int_{t_{a}}^{t_{b}}dt_{1}\delta\left(t'-t_{1}\right)G\left(t,\, t_{1}\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ \dots\right\} \frac{i}{\hbar}\frac{1}{m}G\left(t,\, t'\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+So we are left with (after setting 
+\begin_inset Formula $J=0$
+\end_inset
+
+):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\left(\frac{\hbar}{i}\right)^{2}\frac{i}{\hbar}\frac{1}{m}G\left(t,\, t'\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{i\hbar}{2\pi m}}\left(t_{b}-t_{a}\right)^{-\frac{3}{2}}\left[\theta\left(t-t'\right)\left(t_{b}-t\right)\left(t'-t_{a}\right)+\theta\left(t'-t\right)\left(t_{b}-t'\right)\left(t-t_{a}\right)\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Euclidean Time
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ The Green's function equation for the Euclidean simple harmonic oscillator
+ is given by 
+\begin_inset Formula $\left(-\frac{d^{2}}{d\tau^{2}}+\omega^{2}\right)G_{E}\left(\tau,\,\tau'\right)=\delta\left(\tau-\tau'\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The Green's function equation for the simple harmonic oscillator is given
+ by 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\left(\frac{d^{2}}{dt^{2}}+\omega^{2}\right)G\left(t,\, t'\right)=\delta\left(t-t'\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now we make a change of variables: 
+\begin_inset Formula $\boxed{\tau:=it}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Then 
+\begin_inset Formula $\frac{d}{dt}=\frac{dt}{d\tau}\frac{d}{d\tau}=-i\frac{d}{d\tau}$
+\end_inset
+
+ and so 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}=-\frac{d^{2}}{d\tau^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\delta\left(t-t'\right)=\delta\left(-i\tau+i\tau'\right)=\delta\left(-i\left(\tau-\tau'\right)\right)=\frac{\delta\left(\tau-\tau'\right)}{\left|-i\right|}=\delta\left(\tau-\tau'\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Define 
+\begin_inset Formula $G_{E}\left(\tau,\,\tau'\right):=G\left(-i\tau,\,-i\tau'\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $G_{E}\left(\tau,\,\tau'\right)=\frac{1}{2\omega}e^{-\omega\left|\tau-\tau'\right|}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Take the Fourier transform of both sides of 
+\begin_inset Formula $\left(-\frac{d^{2}}{d\tau^{2}}+\omega^{2}\right)G_{E}\left(\tau,\,\tau'\right)=\delta\left(\tau-\tau'\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\delta\left(\tau-\tau'\right)=\frac{1}{2\pi}\int_{\mathbb{R}}e^{-ik\left(\tau-\tau'\right)}dk$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G_{E}\left(\tau,\,\tau'\right)\stackrel{\mbox{follows from translational invariance}}{=}G_{E}\left(\tau-\tau'\right)=\frac{1}{2\pi}\int_{\mathbb{R}}e^{-ik\left(\tau-\tau'\right)}\tilde{G_{E}}\left(k\right)dk$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $-\frac{d^{2}}{d\tau^{2}}G_{E}\left(\tau,\,\tau'\right)=-\frac{d^{2}}{d\tau^{2}}\frac{1}{2\pi}\int_{\mathbb{R}}e^{-ik\left(\tau-\tau'\right)}\tilde{G_{E}}\left(k\right)dk=\frac{1}{2\pi}\int_{\mathbb{R}}\left(-\frac{d^{2}}{d\tau^{2}}\right)e^{-ik\left(\tau-\tau'\right)}\tilde{G_{E}}\left(k\right)dk=\frac{1}{2\pi}\int_{\mathbb{R}}k^{2}e^{-ik\left(\tau-\tau'\right)}\tilde{G_{E}}\left(k\right)dk$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus in Fourier space our equation is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left(k^{2}+\omega^{2}\right)\tilde{G_{E}}\left(k\right)=1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+and so we conclude that:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\tilde{G_{E}}\left(k\right)=\frac{1}{k^{2}+\omega^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+In order to compute 
+\begin_inset Formula $G_{E}\left(\tau,\,\tau'\right)$
+\end_inset
+
+ we need the inverse transform of 
+\begin_inset Formula $\tilde{G_{E}}\left(k\right)$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $G_{E}\left(\tau,\,\tau'\right)=\int_{\mathbb{R}}e^{ik\left(\tau-\tau'\right)}\tilde{G}_{E}\left(k\right)dk=\int_{\mathbb{R}}e^{ik\left(\tau-\tau'\right)}\frac{1}{k^{2}+\omega^{2}}dk$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The integrand has two poles at 
+\begin_inset Formula $k^{2}+\omega^{2}=0$
+\end_inset
+
+ that is, at 
+\begin_inset Formula $k=\pm i\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Write 
+\begin_inset Formula $\int_{\mathbb{R}}e^{ik\left(\tau-\tau'\right)}\frac{1}{k^{2}+\omega^{2}}dk=\int_{\mathbb{R}}\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)}dk$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Using Cauhcy's theorem we know that 
+\begin_inset Formula $\int_{\mathbb{R}}\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)}dk+\int_{\mbox{semi-circle}}\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)}dk=\sum_{\mbox{residues}}2\pi iRes\left(\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)},\, k_{i}\right)$
+\end_inset
+
+ where the contour on the semi-circle is meant as a semicircle (either above
+ or below 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+, depending on the sign of 
+\begin_inset Formula $\tau-\tau'$
+\end_inset
+
+--see below) with radius which tends to infinity.
+\end_layout
+
+\begin_layout Enumerate
+Using Jordan's lemma we know that 
+\begin_inset Formula $\int_{\mbox{semi-circle}}\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)}dk=0$
+\end_inset
+
+ as the radius of the semi-circule tends to infinity.
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\tau-\tau'>0$
+\end_inset
+
+, we need to take the upper semicircle, in which case we get the residue
+ at 
+\begin_inset Formula $k=i\omega$
+\end_inset
+
+, which, since this is a simple pole, is given by 
+\begin_inset Formula $\lim_{k\to i\omega}\left(k-i\omega\right)\frac{e^{ik\left(\tau-\tau'\right)}}{\left(k-i\omega\right)\left(k+i\omega\right)}=\frac{e^{i\left(i\omega\right)\left(\tau-\tau'\right)}}{\left(2i\omega\right)}$
+\end_inset
+
+ and so our integral becomes, in that case, 
+\begin_inset Formula $2\pi i\frac{e^{-\omega\left(\tau-\tau'\right)}}{2i\omega}=\frac{e^{-\omega\left(\tau-\tau'\right)}}{2\omega}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Similarly, if 
+\begin_inset Formula $\tau-\tau'<0$
+\end_inset
+
+ we have that the integral results in 
+\begin_inset Formula $\frac{e^{\omega\left(\tau-\tau'\right)}}{2\omega}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Our Green's function was 
+\begin_inset Formula $\frac{1}{k^{2}+\omega^{2}}$
+\end_inset
+
+ which is related to the one of Minkowski space by 
+\begin_inset Formula $\frac{1}{-k^{2}+\omega^{2}}$
+\end_inset
+
+.
+ We used the Feynman prescription to evaluate the integral.
+ We can only do Wick rotation if we don't encounter any poles while rotating:
+ that is only in the Feynman prescription.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

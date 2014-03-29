@@ -1,0 +1,1436 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\usepackage{dsfont}
+
+\usepackage{amsmath}
+
+\usepackage{slashed}
+\usepackage{breqn}
+% Add support for automatic equation breaking
+\gdef\wrap@breqn@environ#1#2{
+    \expandafter\let\csname breqn@oldbegin@#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\let\csname breqn@oldend@#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\gdef\csname breqn@begin@#1\endcsname{%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@oldbegin@#1\endcsname%
+        \begin{#2}%
+    }
+    \expandafter\gdef\csname breqn@end@#1\endcsname{%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@oldend@#1\endcsname%
+        \end{#2}%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname%
+    }
+    \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname
+    \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname
+}
+\wrap@breqn@environ{equation}{dmath}
+\wrap@breqn@environ{equation*}{dmath*}
+\global\let\[=\equation 
+\global\let\]=\endequation
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Solutions to Homework No.
+ 1 in Quantum Field Theory 2
+\end_layout
+
+\begin_layout Author
+Jacob Shapiro
+\end_layout
+
+\begin_layout Section*
+Exercise 1--Free Particle Propagator
+\end_layout
+
+\begin_layout Subsection*
+(a)
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{-ax^{2}}=\sqrt{\frac{\pi}{a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define 
+\begin_inset Formula $I:=\int_{\mathbb{R}}dx\, e^{-ax^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $I^{2}=\left(\int_{\mathbb{R}}dx\, e^{-ax^{2}}\right)^{2}=\left(\int_{\mathbb{R}}dx\, e^{-ax^{2}}\right)\left(\int_{\mathbb{R}}dy\, e^{-ay^{2}}\right)=\int_{\mathbb{R}^{2}}dxdye^{-a\left(x^{2}+y^{2}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Move to polar coordinates:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $I^{2}=\int_{\mathbb{R}^{2}}rdrd\theta e^{-ar^{2}}=\left(\int_{\left[0,\,2\pi\right]}d\theta\right)\left(\int_{\left[0,\,\infty\right)}rdre^{-ar^{2}}\right)=2\pi\left(\int_{\left[0,\,\infty\right)}rdre^{-ar^{2}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Make the change of variable 
+\begin_inset Formula $ar^{2}\mapsto\rho$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $I^{2}=2\pi\int_{\left[0,\,\infty\right)}\frac{d\rho}{2a}e^{-\rho}=\frac{\pi}{a}\int_{\left[0,\,\infty\right)}d\rho e^{-\rho}=\frac{\pi}{a}\left(-\left.e^{-\rho}\right|_{\rho\to\infty}-\left(-\left.e^{-\rho}\right|_{\rho=0}\right)\right)=\frac{\pi}{a}\left(0+1\right)=\frac{\pi}{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ $
+\end_inset
+
+Thus we find that 
+\begin_inset Formula $I=\pm\sqrt{\frac{\pi}{a}}$
+\end_inset
+
+, but because 
+\begin_inset Formula $\exp\left(\mathbb{R}\right)\subseteq\left[0,\,\infty\right]$
+\end_inset
+
+, 
+\begin_inset Formula $I\geq0$
+\end_inset
+
+ and so 
+\begin_inset Formula $I=\sqrt{\frac{\pi}{a}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+(b)
+\end_layout
+
+\begin_layout Standard
+Assume that 
+\begin_inset Formula $a\in\mathbb{C}$
+\end_inset
+
+ is such that 
+\begin_inset Formula $\frac{a-a^{\ast}}{2i}>0$
+\end_inset
+
+, that is, 
+\begin_inset Formula $a$
+\end_inset
+
+'s imaginary part is strictly positive.
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{iax^{2}+ikx}=\sqrt{\frac{i\pi}{a}}e^{-\frac{ik^{2}}{4a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{iax^{2}}=\sqrt{\frac{\pi i}{a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Despite the hint we follow a similar approach to part (a):
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $I:=\int_{\mathbb{R}}dx\, e^{iax^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $I^{2}=\left(\int_{\mathbb{R}}dx\, e^{iax^{2}}\right)^{2}=\int_{\mathbb{R}}dx\, e^{iax^{2}}\int_{\mathbb{R}}dy\, e^{iay^{2}}\stackrel{\mbox{Fubini's Theorem}}{=}\int_{\mathbb{R}^{2}}dxdye^{ia\left(x^{2}+y^{2}\right)}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Moving again to polar coordinates we obtain:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $I^{2}=\int_{0}^{2\pi}d\theta\int_{0}^{\infty}drre^{iar^{2}}=2\pi\left.\left[\frac{e^{iar^{2}}}{2ia}\right]\right|_{0}^{\infty}=-\frac{\pi i}{a}\left[\lim_{r\to\infty}e^{iar^{2}}-1\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\lim_{r\to\infty}e^{iar^{2}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Since 
+\begin_inset Formula $a$
+\end_inset
+
+ has a positive imaginary part, we may write it without loss of generality
+ as 
+\begin_inset Formula $a=\alpha+i\beta^{2}$
+\end_inset
+
+ where 
+\begin_inset Formula $\left\{ \alpha,\,\beta\right\} \subset\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thus we get 
+\begin_inset Formula $\left|\lim_{r\to\infty}e^{iar^{2}}\right|=\left|\lim_{r\to\infty}e^{i\left(\alpha+i\beta^{2}\right)r^{2}}\right|=\left|\lim_{r\to\infty}e^{i\alpha r^{2}}e^{-\beta^{2}r^{2}}\right|\leq\lim_{r\to\infty}e^{-\beta^{2}r^{2}}=0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Thus 
+\begin_inset Formula $I^{2}=\frac{\pi i}{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We thus find that 
+\begin_inset Formula $I=\pm\sqrt{\frac{\pi i}{a}}$
+\end_inset
+
+.
+ We reject the minus solution because 
+\begin_inset Formula $\exp\left(\mathbb{C}\right)\subseteq\mathbb{H}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Going back to the original integral, 
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{iax^{2}+ikx}$
+\end_inset
+
+, we complete the square to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $iax^{2}+ikx=i\left(ax^{2}+kx\right)=i\left[ax^{2}+2\sqrt{a}x\frac{1}{2\sqrt{a}}k+\left(\frac{1}{2\sqrt{a}}k\right)^{2}-\left(\frac{1}{2\sqrt{a}}k\right)^{2}\right]=i\left[\left(\sqrt{a}x+\frac{1}{2\sqrt{a}}k\right)^{2}-\left(\frac{1}{2\sqrt{a}}k\right)^{2}\right]=i\left(\sqrt{a}x+\frac{k}{2\sqrt{a}}\right)^{2}-\frac{ik^{2}}{4a}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+and so:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{iax^{2}+ikx}=\int_{\mathbb{R}}dx\, e^{i\left(\sqrt{a}x+\frac{k}{2\sqrt{a}}\right)^{2}-\frac{ik^{2}}{4a}}=e^{-\frac{ik^{2}}{4a}}\int_{\mathbb{R}}dx\, e^{ia\left(x+\frac{k}{2a}\right)^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We make a change of variable 
+\begin_inset Formula $x+\frac{k}{2a}\mapsto\rho$
+\end_inset
+
+ to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}}dx\, e^{iax^{2}+ikx}\stackrel{\mbox{using the previous result}}{=}e^{-\frac{ik^{2}}{4a}}\sqrt{\frac{\pi i}{a}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+(c)
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ The free particle propagator, which is given by: 
+\begin_inset Formula 
+\[
+K\left(x,\, x';\, t-t'\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t-t'\right)}}\exp\left[\frac{im\left(x-x'\right)^{2}}{2\hbar\left(t-t'\right)}\right]
+\]
+
+\end_inset
+
+satisfies the completeness relation
+\begin_inset Formula 
+\[
+K\left(x_{b},\, x_{a};\, t_{b}-t_{a}\right)=\int_{\mathbb{R}}dx\,\Braket{x_{b},\, t_{b}|x,\, t}\Braket{x,\, t|x_{a},\, t_{a}}
+\]
+
+\end_inset
+
+ for all 
+\begin_inset Formula $t\in\left(t_{a},\, t_{b}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $t\in\left(t_{a},\, t_{b}\right)$
+\end_inset
+
+ be given.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{\mathbb{R}}dx\,\Braket{x_{b},\, t_{b}|x,\, t}\Braket{x,\, t|x_{a},\, t_{a}}=\int_{\mathbb{R}}dx\, K\left(x_{b},\, x;\, t_{b}-t\right)K\left(x,\, x_{a};\, t-t_{a}\right)=\int_{\mathbb{R}}dx\,\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t\right)}}\exp\left[\frac{im\left(x_{b}-x\right)^{2}}{2\hbar\left(t_{b}-t\right)}\right]\,\sqrt{\frac{m}{2\pi i\hbar\left(t-t_{a}\right)}}\exp\left[\frac{im\left(x-x_{a}\right)^{2}}{2\hbar\left(t-t_{a}\right)}\right]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $=\frac{m}{2\pi i\hbar}\sqrt{\frac{1}{\left(t_{b}-t\right)\left(t-t_{a}\right)}}\int_{\mathbb{R}}dx\,\exp\left\{ \frac{im}{2\hbar}\left[\frac{\left(x_{b}-x\right)^{2}}{t_{b}-t}+\frac{\left(x-x_{a}\right)^{2}}{t-t_{a}}\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Rearrange 
+\begin_inset Formula $\frac{\left(x_{b}-x\right)^{2}}{t_{b}-t}+\frac{\left(x-x_{a}\right)^{2}}{t-t_{a}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\frac{\left(x_{b}-x\right)^{2}}{t_{b}-t}+\frac{\left(x-x_{a}\right)^{2}}{t-t_{a}}=\frac{t_{b}-t_{a}}{\left(t_{b}-t\right)\left(t-t_{a}\right)}x^{2}+\frac{-2\left[x_{b}\left(t-t_{a}\right)+x_{a}\left(t_{b}-t\right)\right]}{\left(t_{b}-t\right)\left(t-t_{a}\right)}x+\frac{\left(t-t_{a}\right)x_{b}^{2}+\left(t_{b}-t\right)x_{a}^{2}}{\left(t_{b}-t\right)\left(t-t_{a}\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Plugging this in we get: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{m}{2\pi i\hbar}\sqrt{\frac{1}{\left(t_{b}-t\right)\left(t-t_{a}\right)}}\exp\left\{ \frac{im}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\left[\left(t-t_{a}\right)x_{b}^{2}+\left(t_{b}-t\right)x_{a}^{2}\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}}dx\,\exp\left\{ i\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}x^{2}+i\frac{-2m\left[x_{b}\left(t-t_{a}\right)+x_{a}\left(t_{b}-t\right)\right]}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}x\right\} =$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Add a small positive imaginary part to 
+\begin_inset Formula $\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}$
+\end_inset
+
+ to be able to use our earlier results (it is valid to take 
+\begin_inset Formula $\lim_{\varepsilon\to0}$
+\end_inset
+
+ out of the integral using the Lebesgue dominated convergence theorem):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\varepsilon\to0}\frac{m}{2\pi i\hbar}\sqrt{\frac{1}{\left(t_{b}-t\right)\left(t-t_{a}\right)}}\exp\left\{ \frac{im}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\left[\left(t-t_{a}\right)x_{b}^{2}+\left(t_{b}-t\right)x_{a}^{2}\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\int_{\mathbb{R}}dx\,\exp\left\{ i\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}+i\varepsilon^{2}\right]x^{2}+i\frac{-2m\left[x_{b}\left(t-t_{a}\right)+x_{a}\left(t_{b}-t\right)\right]}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}x\right\} =$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Use our earlier result for the integral:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{\varepsilon\to0}\frac{m}{2\pi i\hbar}\sqrt{\frac{1}{\left(t_{b}-t\right)\left(t-t_{a}\right)}}\exp\left\{ \frac{im}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\left[\left(t-t_{a}\right)x_{b}^{2}+\left(t_{b}-t\right)x_{a}^{2}\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\sqrt{\frac{i\pi}{\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}+i\varepsilon^{2}\right]}}exp\left\{ \frac{-i\left[\frac{-2m\left[x_{b}\left(t-t_{a}\right)+x_{a}\left(t_{b}-t\right)\right]}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\right]^{2}}{4\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}+i\varepsilon^{2}\right]}\right\} =$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Take the 
+\begin_inset Formula $\varepsilon\to0$
+\end_inset
+
+ limit because all involved functions are continuous:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{m}{2\pi i\hbar}\sqrt{\frac{1}{\left(t_{b}-t\right)\left(t-t_{a}\right)}}\exp\left\{ \frac{im}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\left[\left(t-t_{a}\right)x_{b}^{2}+\left(t_{b}-t\right)x_{a}^{2}\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\sqrt{\frac{i\pi}{\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\right]}}\exp\left\{ \frac{-i\left[\frac{-2m\left[x_{b}\left(t-t_{a}\right)+x_{a}\left(t_{b}-t\right)\right]}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\right]^{2}}{4\left[\frac{m\left(t_{b}-t_{a}\right)}{2\hbar\left(t_{b}-t\right)\left(t-t_{a}\right)}\right]}\right\} =$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+After rearranging and collecting terms:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m}{2\pi i\hbar\left(t_{b}-t_{a}\right)}}\exp\left[\frac{im\left(x_{b}-x_{b}\right)^{2}}{2\hbar\left(t_{b}-t_{a}\right)}\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Exercise 2--Free Particle Wave Function
+\end_layout
+
+\begin_layout Itemize
+The free particle wave function at time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ is 
+\begin_inset Formula $\psi\left(x\right)=\frac{e^{\frac{i}{\hbar}px}}{\sqrt{2\pi\hbar}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+According to our prescription, its value at later times 
+\begin_inset Formula $t>0$
+\end_inset
+
+ is given by:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\psi\left(x,\, t\right)=\int_{\mathbb{R}}dx'K\left(x,\, x';\, t\right)\psi\left(x'\right)\stackrel{\mbox{using the above}}{=}\int_{\mathbb{R}}dx'\sqrt{\frac{m}{2\pi i\hbar t}}e^{\frac{im\left(x-x'\right)^{2}}{2\hbar t}}\,\frac{e^{\frac{i}{\hbar}px'}}{\sqrt{2\pi\hbar}}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}\int_{\mathbb{R}}dx'e^{\frac{im\left(x-x'\right)^{2}}{2\hbar t}+\frac{i}{\hbar}px'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next make the change of variables 
+\begin_inset Formula $x'-x\mapsto\rho$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}e^{\frac{i}{\hbar}px}\int_{\mathbb{R}}d\rho e^{\frac{im\rho^{2}}{2\hbar t}+\frac{i}{\hbar}p\rho}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}e^{\frac{i}{\hbar}px}\int_{\mathbb{R}}d\rho\lim_{\varepsilon\to0}e^{i\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)\rho^{2}+\frac{i}{\hbar}p\rho}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\stackrel{\mbox{Convergence Theorem}}{=}\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}e^{\frac{i}{\hbar}px}\lim_{\varepsilon\to0}\int_{\mathbb{R}}d\rho e^{i\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)\rho^{2}+\frac{i}{\hbar}p\rho}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use question 1 (b) to ascertain that: 
+\begin_inset Formula $\int_{\mathbb{R}}d\rho e^{i\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)\rho^{2}+\frac{i}{\hbar}p\rho}=\sqrt{\frac{i\pi}{\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)}}e^{-\frac{i\left(p/\hbar\right)^{2}}{4\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus we have 
+\begin_inset Formula $\psi\left(x,\, t\right)=\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}e^{\frac{i}{\hbar}px}\lim_{\varepsilon\to0}\sqrt{\frac{i\pi}{\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)}}e^{-\frac{i\left(p/\hbar\right)^{2}}{4\left(\frac{m}{2\hbar t}+i\varepsilon^{2}\right)}}=\frac{1}{2\pi\hbar}\sqrt{\frac{m}{it}}e^{\frac{i}{\hbar}px}\sqrt{\frac{i\pi}{m/2\hbar t}}e^{-\frac{i\left(p/\hbar\right)^{2}}{4\left(m/2\hbar t\right)}}=\frac{1}{\sqrt{2\pi\hbar}}e^{\frac{i}{\hbar}px-\frac{i}{\hbar}\frac{p^{2}}{2m}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is exactly what you would find in Sakurai page 
+\begin_inset Formula $523$
+\end_inset
+
+ on equation 
+\begin_inset Formula $B.1.1$
+\end_inset
+
+ (making the proper 
+\begin_inset Formula $3D$
+\end_inset
+
+ to 
+\begin_inset Formula $1D$
+\end_inset
+
+ transition), hence we are self consistent with old quantum mechanics.
+\end_layout
+
+\begin_layout Section*
+Exercise 3--A Bit More on Propagators
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula 
+\[
+K\left(x,\, x';\, t-t'\right)=\sum_{\beta}e^{-\frac{i}{\hbar}E_{\beta}\left(t-t'\right)}\Braket{x|\beta}\Braket{\beta|x'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+(a)
+\end_layout
+
+\begin_layout Standard
+Let us compute 
+\begin_inset Formula $K$
+\end_inset
+
+ for a free particle:
+\end_layout
+
+\begin_layout Itemize
+For a free particle, the energy eigenvalues are 
+\begin_inset Formula $\frac{p^{2}}{2m}$
+\end_inset
+
+ where 
+\begin_inset Formula $p\in\mathbb{R}$
+\end_inset
+
+ and so we have:
+\begin_inset Formula 
+\[
+K\left(x,\, x';\, t-t'\right)=\int_{\mathbb{R}}dp\, e^{-\frac{i}{\hbar}\frac{p^{2}}{2m}\left(t-t'\right)}\Braket{x|p}\Braket{p|x'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Plug in 
+\begin_inset Formula $\Braket{x|p}=\frac{e^{\frac{i}{\hbar}px}}{\sqrt{2\pi\hbar}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Braket{p|x}=\frac{e^{-\frac{i}{\hbar}px}}{\sqrt{2\pi\hbar}}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $K\left(x,\, x';\, t-t'\right)=\int_{\mathbb{R}}dp\, e^{-\frac{i}{\hbar}\frac{p^{2}}{2m}\left(t-t'\right)}\frac{e^{\frac{i}{\hbar}px}}{\sqrt{2\pi\hbar}}\frac{e^{-\frac{i}{\hbar}px'}}{\sqrt{2\pi\hbar}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\int_{\mathbb{R}}dp\,\exp\left\{ +i\frac{\left(t'-t\right)}{2m\hbar}p^{2}+i\frac{\left(x-x'\right)}{\hbar}p\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\int_{\mathbb{R}}dp\,\lim_{\varepsilon\to0}\exp\left\{ +i\left[\frac{\left(t'-t\right)}{2m\hbar}+i\varepsilon^{2}\right]p^{2}+i\frac{\left(x-x'\right)}{\hbar}p\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\stackrel{\mbox{...}}{=}\frac{1}{2\pi\hbar}\lim_{\varepsilon\to0}\int_{\mathbb{R}}dp\,\exp\left\{ +i\left[\frac{\left(t'-t\right)}{2m\hbar}+i\varepsilon^{2}\right]p^{2}+i\frac{\left(x-x'\right)}{\hbar}p\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now use the result of part 1.
+ (b) with 
+\begin_inset Formula $a:=\left[\frac{\left(t'-t\right)}{2m\hbar}+i\varepsilon^{2}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $k=\frac{\left(x-x'\right)}{\hbar}$
+\end_inset
+
+ to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\lim_{\varepsilon\to0}\sqrt{\frac{\pi i}{\left[\frac{\left(t'-t\right)}{2m\hbar}+i\varepsilon^{2}\right]}}e^{\frac{-i\left[\frac{\left(x-x'\right)}{\hbar}\right]^{2}}{4\left[\frac{\left(t'-t\right)}{2m\hbar}+i\varepsilon^{2}\right]}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\sqrt{\frac{\pi i}{\frac{\left(t'-t\right)}{2m\hbar}}}e^{\frac{-i\left[\frac{\left(x-x'\right)}{\hbar}\right]^{2}}{4\frac{\left(t'-t\right)}{2m\hbar}}}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m}{i\left(t-t'\right)2\pi\hbar}}\,\exp\left\{ \frac{im\left(x-x'\right)^{2}}{2\hbar\left(t-t'\right)}\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+which is precisely what we started with in 1.
+ (c).
+\end_layout
+
+\begin_layout Subsection*
+(b)
+\end_layout
+
+\begin_layout Standard
+Let us compute 
+\begin_inset Formula $K$
+\end_inset
+
+ for a simple harmonic oscillator (Sakurai page 527):
+\end_layout
+
+\begin_layout Itemize
+For a simple harmonic oscillator, the energy eigenvalues are 
+\begin_inset Formula $\hbar\omega\left(n+\frac{1}{2}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $n\in\mathbb{N}\cup\left\{ 0\right\} $
+\end_inset
+
+ and so we have:
+\begin_inset Formula 
+\[
+K\left(x,\, x';\, t-t'\right)=\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }e^{-\frac{i}{\hbar}\hbar\omega\left(n+\frac{1}{2}\right)\left(t-t'\right)}\Braket{x|n}\Braket{n|x'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Plug in 
+\begin_inset Formula $\Braket{x|n}=\left[\frac{m\omega}{\pi\hbar2^{2n}\left(n!\right)^{2}}\right]^{\frac{1}{4}}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)H_{n}\left(\sqrt{\frac{m\omega}{\hbar}}x\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $H_{n}\left(-\right)$
+\end_inset
+
+ are the Hermite polynomials:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $K\left(x,\, x';\, t-t'\right)=\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }e^{-\frac{i}{\hbar}\hbar\omega\left(n+\frac{1}{2}\right)\left(t-t'\right)}\left[\frac{m\omega}{\pi\hbar2^{2n}\left(n!\right)^{2}}\right]^{\frac{1}{4}}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)H_{n}\left(\sqrt{\frac{m\omega}{\hbar}}x\right)\times\left[\left[\frac{m\omega}{\pi\hbar2^{2n}\left(n!\right)^{2}}\right]^{\frac{1}{4}}\exp\left(-\frac{m\omega}{2\hbar}\left(x'\right)^{2}\right)H_{n}\left(\sqrt{\frac{m\omega}{\hbar}}x'\right)\right]^{\ast}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Since the Hermite polynomials are real we obtain:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m\omega}{\pi\hbar}}\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+\left(x'\right)^{2}\right)-\frac{i}{\hbar}\hbar\omega\frac{1}{2}\left(t-t'\right)\right]\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }\frac{1}{n!}\left\{ \frac{\exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]}{2}\right\} ^{n}\times H_{n}\left(\sqrt{\frac{m\omega}{\hbar}}x\right)H_{n}\left(\sqrt{\frac{m\omega}{\hbar}}x'\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\exists$
+\end_inset
+
+ a formula called 
+\begin_inset Quotes eld
+\end_inset
+
+Mehler's Hermite Polynomial Formula
+\begin_inset Quotes erd
+\end_inset
+
+ (from 
+\begin_inset Newline newline
+\end_inset
+
+http://mathworld.wolfram.com/MehlersHermitePolynomialFormula.html) which stipulates
+:
+\begin_inset Formula 
+\[
+\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }\frac{1}{n!}\left(\frac{w}{2}\right)^{n}H_{n}\left(x\right)H_{n}\left(y\right)=\sqrt{\frac{1}{1-w^{2}}}\exp\left[\frac{2xyw-\left(x^{2}+y^{2}\right)w^{2}}{1-w^{2}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We employ this formula with 
+\begin_inset Formula $w:=\exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]$
+\end_inset
+
+ to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m\omega}{\pi\hbar}}\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+\left(x'\right)^{2}\right)-\frac{i}{\hbar}\hbar\omega\frac{1}{2}\left(t-t'\right)\right]\sqrt{\frac{1}{1-\left\{ \exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]\right\} ^{2}}}\times\exp\left[\frac{2\sqrt{\frac{m\omega}{\hbar}}x\sqrt{\frac{m\omega}{\hbar}}x'\left\{ \exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]\right\} -\left(\left[\sqrt{\frac{m\omega}{\hbar}}x\right]^{2}+\left[\sqrt{\frac{m\omega}{\hbar}}x'\right]^{2}\right)\left\{ \exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]\right\} ^{2}}{1-\left\{ \exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]\right\} ^{2}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rearranging we obtain finally:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{m\omega}{\pi\hbar}\frac{1}{1-\exp\left[-2\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]}}\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+\left(x'\right)^{2}\right)-\frac{i}{\hbar}\hbar\omega\frac{1}{2}\left(t-t'\right)+\frac{2\frac{m\omega}{\hbar}xx'\exp\left[-\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]}{1-\exp\left[-2\frac{i}{\hbar}\hbar\omega\left(t-t'\right)\right]}\right]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+which can probably be simplified further?
+\end_layout
+
+\begin_layout Section*
+Exercise 4--Explicit Propagator Calculation
+\end_layout
+
+\begin_layout Standard
+Let a Lagrangian be given as 
+\begin_inset Formula $L\left(x,\,\dot{x}\right):=\frac{1}{2}f\left(x\right)\dot{x}^{2}+g\left(x\right)\dot{x}-V\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+(a)
+\end_layout
+
+\begin_layout Standard
+Let us calculate the Hamiltonian:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H\equiv p\dot{x}-L=p\dot{x}-\frac{1}{2}f\left(x\right)\dot{x}^{2}-g\left(x\right)\dot{x}+V\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\equiv\frac{\partial L}{\partial\dot{x}}=f\left(x\right)\dot{x}+g\left(x\right)$
+\end_inset
+
+, thus 
+\begin_inset Formula $\dot{x}=\frac{p-g\left(x\right)}{f\left(x\right)}$
+\end_inset
+
+.
+ Plug this into the expression of 
+\begin_inset Formula $H$
+\end_inset
+
+ to get 
+\begin_inset Formula $H$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+ instead of 
+\begin_inset Formula $\dot{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $H=p\frac{p-g\left(x\right)}{f\left(x\right)}-\frac{1}{2}f\left(x\right)\left[\frac{p-g\left(x\right)}{f\left(x\right)}\right]^{2}-g\left(x\right)\frac{p-g\left(x\right)}{f\left(x\right)}+V\left(x\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2}\frac{\left[p-g\left(x\right)\right]^{2}}{f\left(x\right)}+V\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+(b)
+\end_layout
+
+\begin_layout Standard
+Let us calculate the propagator for some time 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ where we will eventually take the limit 
+\begin_inset Formula $\lim_{\varepsilon\to0}$
+\end_inset
+
+ and so during the calculation we shall ignore all orders above the linear
+ order:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K\left(x,\, x';\,\varepsilon\right)\equiv\Braket{x,\,\varepsilon\,|\, x',\,0}\equiv\Braket{x\,|\, e^{-\frac{i}{\hbar}\hat{H}\varepsilon}\,|\, x'}=\Braket{x\,|\,\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }\frac{1}{n!}\left(-\frac{i}{\hbar}\hat{H}\varepsilon\right)^{n}\,|\, x'}=\Braket{x\,|\,\left(1-\frac{i}{\hbar}\hat{H}\varepsilon\right)\,|\, x'}+\mathcal{O}\left(\varepsilon^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Insert 
+\begin_inset Formula $\mathds{1}=\int_{\mathbb{R}}dp\,\Ket{p}\Bra{p}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\Bra{x}\left(1-\frac{i}{\hbar}\hat{H}\varepsilon\right)\int_{\mathbb{R}}dp\,\Ket{p}\Bra{p}\Ket{x'}=\int_{\mathbb{R}}dp\Bra{x}\left(1-\frac{i}{\hbar}\hat{H}\varepsilon\right)\,\Ket{p}\Braket{p\,|\, x'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, 
+\begin_inset Formula $\Bra{x}\hat{H}\,\Ket{p}$
+\end_inset
+
+ is easy to evaluate: 
+\begin_inset Formula $\Bra{x}\hat{H}\,\Ket{p}=\Bra{x}\left(\frac{1}{2}\frac{\left[\hat{p}-g\left(\hat{x}\right)\right]^{2}}{f\left(\hat{x}\right)}+V\left(\hat{x}\right)\right)\,\Ket{p}\stackrel{\mbox{operators become numbers}}{=}\left(\frac{1}{2}\frac{\left[p-g\left(x\right)\right]^{2}}{f\left(x\right)}+V\left(x\right)\right)\Braket{x\,|\, p}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Plugging this in we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\left[1-\frac{i}{\hbar}\left(\frac{1}{2}\frac{\left[p-g\left(x\right)\right]^{2}}{f\left(x\right)}+V\left(x\right)\right)\varepsilon\right]\int_{\mathbb{R}}dp\Braket{x\,|\, p}\Braket{p\,|\, x'}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\exp\left\{ -\frac{i}{\hbar}\varepsilon\left[\frac{1}{2}\frac{\left[p-g\left(x\right)\right]^{2}}{f\left(x\right)}+V\left(x\right)\right]\right\} \int_{\mathbb{R}}dp\frac{e^{\frac{i}{\hbar}px}}{\sqrt{2\pi\hbar}}\frac{e^{-\frac{i}{\hbar}px'}}{\sqrt{2\pi\hbar}}+\mathcal{O}\left(\varepsilon^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rearrange to arrive at:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\int_{\mathbb{R}}dp\exp\left\{ -\frac{i}{\hbar}\varepsilon\left[\frac{1}{2}\frac{\left[p-g\left(x\right)\right]^{2}}{f\left(x\right)}+V\left(x\right)\right]+\frac{i}{\hbar}p\left(x-x'\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Make the change of variable 
+\begin_inset Formula $p-g\left(x\right)\mapsto p'$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\int_{\mathbb{R}}dp'\exp\left\{ -\frac{i}{\hbar}\varepsilon\left[\frac{1}{2}\frac{\left(p'\right)^{2}}{f\left(x\right)}+V\left(x\right)\right]+\frac{i}{\hbar}\left(p'+g\left(x\right)\right)\left(x-x'\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)\right\} \int_{\mathbb{R}}dp'\exp\left\{ i\frac{-\varepsilon}{2\hbar f\left(x\right)}\left(p'\right)^{2}+i\frac{\left(x-x'\right)}{\hbar}p'\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)\right\} \int_{\mathbb{R}}dp'\lim_{\delta\to0}\exp\left\{ i\left[\frac{-\varepsilon}{2\hbar f\left(x\right)}+i\delta^{2}\right]\left(p'\right)^{2}+i\frac{\left(x-x'\right)}{\hbar}p'\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\stackrel{\mbox{...}}{=}\frac{1}{2\pi\hbar}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)\right\} \lim_{\delta\to0}\int_{\mathbb{R}}dp'\exp\left\{ i\left[\frac{-\varepsilon}{2\hbar f\left(x\right)}+i\delta^{2}\right]\left(p'\right)^{2}+i\frac{\left(x-x'\right)}{\hbar}p'\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Carry out the integration over 
+\begin_inset Formula $p'$
+\end_inset
+
+ using the formula of 1.
+ (b) with 
+\begin_inset Formula $a:=\left[\frac{-\varepsilon}{2\hbar f\left(x\right)}+i\delta^{2}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $k:=\frac{\left(x-x'\right)}{\hbar}$
+\end_inset
+
+ to get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)\right\} \lim_{\delta\to0}\sqrt{\frac{i\pi}{\left[\frac{-\varepsilon}{2\hbar f\left(x\right)}+i\delta^{2}\right]}}\exp\left\{ \frac{-i\left(\frac{\left(x-x'\right)}{\hbar}\right)^{2}}{4\left[\frac{-\varepsilon}{2\hbar f\left(x\right)}+i\delta^{2}\right]}\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{2\pi\hbar}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)\right\} \sqrt{\frac{i\pi}{\left(\frac{-\varepsilon}{2\hbar f\left(x\right)}\right)}}\exp\left\{ \frac{-i\left(\frac{\left(x-x'\right)}{\hbar}\right)^{2}}{4\left(\frac{-\varepsilon}{2\hbar f\left(x\right)}\right)}\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{f\left(x\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ -\frac{i}{\hbar}\varepsilon V\left(x\right)+\frac{i}{\hbar}g\left(x\right)\left(x-x'\right)+\frac{i\left(x-x'\right)^{2}f\left(x\right)}{2\hbar\varepsilon}\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{f\left(x\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon\left[\frac{1}{2}f\left(x\right)\frac{\left(x-x'\right)^{2}}{\varepsilon^{2}}+g\left(x\right)\frac{\left(x-x'\right)}{\varepsilon}-V\left(x\right)\right]\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\sqrt{\frac{f\left(x\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon\left.L\left(x,\,\dot{x}\right)\right|_{\dot{x}=\frac{x-x'}{\varepsilon}}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+(c)
+\end_layout
+
+\begin_layout Standard
+Let us determine the path integral for a finite time interval 
+\begin_inset Formula $t_{f}-t_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $i$
+\end_inset
+
+ standing for initial and 
+\begin_inset Formula $f$
+\end_inset
+
+ for final):
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K\left(x_{f},\, x_{i};\, t_{f}-t_{i}\right)\equiv$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\lim_{n\to\infty}\left(\int_{\mathbb{R}^{n}}\prod_{j=1}^{n}dx_{j}\right)\left\{ K\left(x_{f},\, x_{n};\, t_{f}-t_{n}\right)\left[\prod_{j=n}^{2}K\left(x_{j},\, x_{j-1};\, t_{j}-t_{j-1}\right)\right]K\left(x_{1},\, x_{i};\, t_{1}-t_{i}\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ where 
+\begin_inset Formula $\prod_{j=1}^{n}dx_{j}$
+\end_inset
+
+ stands for the Lebesgue measure 
+\begin_inset Formula $d\mu$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We take the partition of 
+\begin_inset Formula $\left[t_{i},\, t_{f}\right]$
+\end_inset
+
+ by dividing each 
+\begin_inset Formula $t_{j}-t_{j-1}$
+\end_inset
+
+ length so that they are all equal to some positive quantity 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{n\to\infty}\left(\int_{\mathbb{R}^{n}}\prod_{j=1}^{n}dx_{j}\right)\left\{ K\left(x_{f},\, x_{n};\,\varepsilon\right)\left[\prod_{j=n}^{2}K\left(x_{j},\, x_{j-1};\,\varepsilon\right)\right]K\left(x_{1},\, x_{i};\,\varepsilon\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Plug in what we found above for the propagator for small times 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{n\to\infty}\left(\int_{\mathbb{R}^{n}}\prod_{j=1}^{n}dx_{j}\right)\{\sqrt{\frac{f\left(x_{f}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{f},\,\frac{x_{f}-x_{n}}{\varepsilon}\right)\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left[\prod_{j=n}^{2}\sqrt{\frac{f\left(x_{j}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{j},\,\frac{x_{j}-x_{j-1}}{\varepsilon}\right)\right\} \right]\sqrt{\frac{f\left(x_{1}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{1},\,\frac{x_{1}-x_{i}}{\varepsilon}\right)\right\} \}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the limit 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{x_{j}-x_{j-1}}{\varepsilon}\to\dot{x}$
+\end_inset
+
+, and so:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\lim_{n\to\infty}\left(\int_{\mathbb{R}^{n}}\prod_{j=1}^{n}dx_{j}\right)\left\{ \sqrt{\frac{f\left(x_{f}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{f},\,\dot{x}_{f}\right)\right\} \right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left[\prod_{j=n}^{2}\sqrt{\frac{f\left(x_{j}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{j},\,\dot{x}_{j}\right)\right\} \right]\sqrt{\frac{f\left(x_{1}\right)}{2\pi i\hbar\varepsilon}}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{1},\,\dot{x}_{1}\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $=\lim_{n\to\infty}\left(\sqrt{\frac{1}{2\pi i\hbar\varepsilon}}\right)^{n+1}\left(\int_{\mathbb{R}^{n}}\prod_{j=1}^{n}dx_{j}\right)$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left\{ \sqrt{f\left(x_{f}\right)}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{f},\,\dot{x}_{f}\right)\right\} \left[\prod_{j=n}^{1}\sqrt{f\left(x_{j}\right)}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{j},\,\dot{x}_{j}\right)\right\} \right]\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $=\sqrt{f\left(x_{f}\right)}\,\lim_{n\to\infty}\exp\left\{ \frac{i}{\hbar}\varepsilon L\left(x_{f},\,\dot{x}_{f}\right)\right\} \,\left(\sqrt{\frac{1}{2\pi i\hbar\varepsilon}}\right)^{n+1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int_{\mathbb{R}^{n}}\left(\prod_{j=1}^{n}\sqrt{f\left(x_{j}\right)}dx_{j}\right)\exp\left\{ \sum_{j=n}^{1}\frac{i}{\hbar}\varepsilon L\left(x_{j},\,\dot{x}_{j}\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In that limit we could probably write (though I am not sure how to make
+ this step rigorous nor how to compute 
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}x\,\sqrt{f\left(x\right)}\,\exp\left\{ \frac{i}{\hbar}\int_{\mathbb{R}}dt\, L\left(x\left(t\right),\,\dot{x}\left(t\right)\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

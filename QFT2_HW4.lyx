@@ -1,0 +1,930 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\usepackage{dsfont}
+
+\usepackage{amsmath}
+
+\usepackage{slashed}
+\usepackage{breqn}
+% Add support for automatic equation breaking
+\gdef\wrap@breqn@environ#1#2{
+    \expandafter\let\csname breqn@oldbegin@#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\let\csname breqn@oldend@#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\gdef\csname breqn@begin@#1\endcsname{%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@oldbegin@#1\endcsname%
+        \begin{#2}%
+    }
+    \expandafter\gdef\csname breqn@end@#1\endcsname{%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@oldend@#1\endcsname%
+        \end{#2}%
+        \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname%
+        \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname%
+    }
+    \expandafter\let\csname #1\expandafter\endcsname\csname breqn@begin@#1\endcsname
+    \expandafter\let\csname end#1\expandafter\endcsname\csname breqn@end@#1\endcsname
+}
+\wrap@breqn@environ{equation}{dmath}
+\wrap@breqn@environ{equation*}{dmath*}
+\global\let\[=\equation 
+\global\let\]=\endequation
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Solutions to Homework No.
+ 4 in Quantum Field Theory II
+\end_layout
+
+\begin_layout Author
+Jacob Shapiro
+\end_layout
+
+\begin_layout Enumerate
+Yukawa Theory from Path Integral Quantization:
+\begin_inset Newline newline
+\end_inset
+
+Let a Lagrangian be given by 
+\begin_inset Formula $\mathcal{L}\left[\bar{\psi},\,\psi,\,\phi\right]=\bar{\psi}_{a}\left(x\right)\left(i\slashed{\partial}^{ab}-M\right)\psi_{b}\left(x\right)+\frac{1}{2}\left(\partial_{\mu}\phi\left(x\right)\right)\left(\partial^{\mu}\phi\left(x\right)\right)-\frac{1}{2}m^{2}\phi\left(x\right)^{2}+\lambda\bar{\psi}^{a}\left(x\right)\psi_{a}\left(x\right)\phi\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]=\mathcal{Z}_{0}\left[0,\,0,\,0\right]\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times e^{i\int d^{4}y\left\{ \lambda\left[i\frac{\delta}{\delta\eta\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta\bar{\eta}\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta J\left(y\right)}\right]\right\} }e^{-\int d^{4}x\int d^{4}y\left[\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)+\frac{1}{2}J\left(x\right)D_{F}\left(x-y\right)J\left(y\right)\right]}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathcal{Z}_{0}\left[J,\,\eta,\,\bar{\eta}\right]$
+\end_inset
+
+ is the generating functional of the 
+\emph on
+unperturbed 
+\emph default
+Lagrangian, 
+\begin_inset Formula $\mathcal{L}_{0}\left[\bar{\psi},\,\psi,\,\phi\right]=\bar{\psi}_{a}\left(x\right)\left(i\slashed{\partial}^{ab}-M\right)\psi_{b}\left(x\right)+\frac{1}{2}\left(\partial_{\mu}\phi\left(x\right)\right)\left(\partial^{\mu}\phi\left(x\right)\right)-\frac{1}{2}m^{2}\phi\left(x\right)^{2}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]\equiv\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\exp\left\{ i\int d^{4}x\left[\mathcal{L}\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times e^{i\int d^{4}x\left[\bar{\psi}\left(x\right)\left(i\slashed{\partial}-M\right)\psi\left(x\right)+\frac{1}{2}\left(\partial_{\mu}\phi\left(x\right)\right)\left(\partial^{\mu}\phi\left(x\right)\right)-\frac{1}{2}m^{2}\phi\left(x\right)^{2}+\lambda\bar{\psi}\left(x\right)\psi\left(x\right)\phi\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sanity check:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{i}\frac{\delta}{\delta J\left(y\right)}\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\phi\left(y\right)e^{i\int d^{4}x\left[\mathcal{L}\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}$
+\end_inset
+
+ as expected.
+\end_layout
+
+\begin_layout Itemize
+Now the real question with Grassmann derivatives:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $i\frac{\delta}{\delta\eta_{a}\left(y\right)}\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\bar{\psi}^{a}\left(y\right)e^{i\int d^{4}x\left[\mathcal{L}\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{i}\frac{\delta}{\delta\bar{\eta}^{a}\left(y\right)}\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\psi_{a}\left(y\right)e^{i\int d^{4}x\left[\mathcal{L}\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Going on we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi e^{i\int d^{4}x\left[\lambda\bar{\psi}\left(x\right)\psi\left(x\right)\phi\left(x\right)\right]}\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times e^{i\int d^{4}x\left[\bar{\psi}\left(x\right)\left(i\slashed{\partial}-M\right)\psi\left(x\right)+\frac{1}{2}\left(\partial_{\mu}\phi\left(x\right)\right)\left(\partial^{\mu}\phi\left(x\right)\right)-\frac{1}{2}m^{2}\phi\left(x\right)^{2}+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+From HW3Q2 we know that 
+\begin_inset Formula $\int d^{4}x\left[\frac{1}{2}\left(\partial_{\mu}\phi\left(x\right)\right)\left(\partial^{\mu}\phi\left(x\right)\right)-\frac{1}{2}m^{2}\phi\left(x\right)^{2}+J\left(x\right)\phi\left(x\right)+\frac{1}{2}i\varepsilon\phi^{2}\right]=\int d^{4}x\left[\frac{1}{2}\phi\left(x\right)\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon\right)\phi\left(x\right)+J\left(x\right)\phi\left(x\right)\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\hat{KG}:=\left(-\partial_{\nu}\partial^{\nu}-m^{2}+i\varepsilon_{1}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\hat{D}^{ab}:=\left(i\slashed{\partial}^{ab}-M\mathds{1}^{ab}+i\varepsilon_{2}\mathds{1}^{ab}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+With the 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+'s that we've added, our generating functional becomes:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi e^{i\int d^{4}x\left[\lambda\bar{\psi}\left(x\right)\psi\left(x\right)\phi\left(x\right)\right]}e^{i\int d^{4}x\left[\bar{\psi}\left(x\right)\hat{D}\psi\left(x\right)+\frac{1}{2}\phi\left(x\right)\hat{KG}\phi\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Write 
+\begin_inset Formula $e^{i\int d^{4}x\left[\lambda\bar{\psi}\left(x\right)\psi\left(x\right)\phi\left(x\right)\right]}=\sum_{n\in\mathbb{N}\cup\left\{ 0\right\} }\frac{1}{n!}\left\{ \int d^{4}y\left[\lambda\bar{\psi}\left(y\right)\psi\left(y\right)\phi\left(y\right)\right]\right\} ^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus we have:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=e^{i\int d^{4}y\left\{ \lambda\left[i\frac{\delta}{\delta\eta\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta\bar{\eta}\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta J\left(y\right)}\right]\right\} }\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi e^{i\int d^{4}x\left[\bar{\psi}\left(x\right)\hat{D}\psi\left(x\right)+\frac{1}{2}\phi\left(x\right)\hat{KG}\phi\left(x\right)+J\left(x\right)\phi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=e^{i\int d^{4}y\left\{ \lambda\left[i\frac{\delta}{\delta\eta\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta\bar{\eta}\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta J\left(y\right)}\right]\right\} }\mathcal{Z}_{0}\left[J,\,\eta,\,\bar{\eta}\right]$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{Z}_{0}$
+\end_inset
+
+ denotes the generating functional of the 
+\emph on
+unperturbed 
+\emph default
+Lagrangian.
+\end_layout
+
+\begin_layout Itemize
+Next, we try to simplify 
+\begin_inset Formula $\mathcal{Z}_{0}\left[J,\,\eta,\,\bar{\eta}\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $D_{F}\left(x-y\right)$
+\end_inset
+
+ be the Green's function for the Klein-Gordon operator 
+\begin_inset Formula $\hat{KG}$
+\end_inset
+
+, that is, we assume the following equation holds:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\hat{KG}D_{F}\left(x-y\right)=i\delta\left(x-y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S_{F}\,_{ab}\left(x-y\right)$
+\end_inset
+
+ be the Green's function for the Dirac operator 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+, that is, we assume the following equation holds:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\hat{D}^{ac}S_{F}\,_{cb}^{\,\,\,}=i\delta\left(x-y\right)\mathds{1}^{a}\,_{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\tilde{\phi}\left(x\right):=\phi\left(x\right)-i\int d^{4}yD_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\tilde{\psi}\left(x\right):=\psi\left(x\right)-i\int d^{4}yS_{F}\left(x-y\right)\eta\left(y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define 
+\begin_inset Formula $\tilde{\bar{\psi}}\left(x\right):=\bar{\psi}\left(x\right)-i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)$
+\end_inset
+
+ 
+\bar under
+what happens when 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ acts on this?
+\end_layout
+
+\begin_layout Itemize
+Place these new definitions in the generating functional:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In HW3Q2 we found that 
+\begin_inset Formula $\int d^{4}x\left[\frac{1}{2}\phi\left(x\right)\hat{KG}\phi\left(x\right)+J\left(x\right)\phi\left(x\right)\right]=\int d^{4}x\left[\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]+\frac{1}{2}i\int d^{4}x\int d^{4}yJ\left(x\right)D_{F}\left(x-y\right)J\left(y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For the Fermionic fields we follow a similar procedure:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int d^{4}x\left[\bar{\psi}\left(x\right)\hat{D}\psi\left(x\right)+\bar{\eta}\left(x\right)\psi\left(x\right)+\bar{\psi}\left(x\right)\eta\left(x\right)\right]=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[\tilde{\bar{\psi}}\left(x\right)+i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\hat{D}\left[\tilde{\psi}\left(x\right)+i\int d^{4}yS_{F}\left(x-y\right)\eta\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \bar{\eta}\left(x\right)\left[\tilde{\psi}\left(x\right)+i\int d^{4}yS_{F}\left(x-y\right)\eta\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[\tilde{\bar{\psi}}\left(x\right)+i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\eta\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\hat{D}\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\left[i\int d^{4}y\hat{D}S_{F}\left(x-y\right)\eta\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\hat{D}\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\right]\left[i\int d^{4}y\hat{D}S_{F}\left(x-y\right)\eta\left(y\right)\right]\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \bar{\eta}\left(x\right)\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+i\int d^{4}x\int d^{4}y\bar{\eta}\left(x\right)S_{F}\left(x-y\right)\eta\left(y\right)+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\eta\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+i\int d^{4}x\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\hat{D}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\slashed{\partial}^{ab}-M\mathds{1}^{ab}+i\varepsilon_{2}\mathds{1}^{ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\slashed{\partial}^{ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right){1}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\partial_{\mu}\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right)\tilde{\psi}^{a}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\underbrace{\int d^{4}x\partial_{\mu}\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} }_{0}-$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-\int d^{4}x\partial_{\mu}\left\{ \partial_{\mu}\left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(-M+i\varepsilon_{2}\right)\tilde{\psi}^{a}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\left\{ \partial_{\mu}\left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\left(i\gamma^{\mu ab}\right)\tilde{\psi}_{b}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(-M+i\varepsilon_{2}\right)\mathds{1}^{cd}S_{F}\,_{da}\left(x-y\right)\right]\tilde{\psi}^{a}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(i\partial_{\mu}\gamma^{\mu ab}\right)S_{F}\,_{ca}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\left(-M\mathds{1}^{cd}+i\varepsilon_{2}\mathds{1}^{cd}\right)S_{F}\,_{da}\left(x-y\right)\right]\tilde{\psi}^{a}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Some care has to be taken with the term 
+\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\hat{D}^{ab}\tilde{\psi}_{b}\left(x\right)\right\} $
+\end_inset
+
+, which now, since 
+\begin_inset Formula $\hat{D}$
+\end_inset
+
+ contains only a first order derivative, will pick up an additional minus
+ sign when using Stokes' theorem to shift 
+\begin_inset Formula $\slashed{\partial}$
+\end_inset
+
+ to act on the left term.
+ This is in contrast to 
+\begin_inset Formula $\hat{KG}$
+\end_inset
+
+ which had 
+\emph on
+two 
+\emph default
+derivatives, and thus, after doing two 
+\begin_inset Quotes eld
+\end_inset
+
+partial integrations
+\begin_inset Quotes erd
+\end_inset
+
+ we got back the same sign we had originally.
+ However, now, when 
+\begin_inset Formula $\slashed{\partial}$
+\end_inset
+
+ acts on 
+\begin_inset Formula $\bar{\eta}\left(y\right)S_{F}\left(x-y\right)$
+\end_inset
+
+, it will pick up an additional minus sign when anti-commuting the gamma
+ matrix in 
+\begin_inset Formula $\slashed{\partial}$
+\end_inset
+
+ with the 
+\begin_inset Formula $\gamma^{0}$
+\end_inset
+
+ in 
+\begin_inset Formula $\bar{\eta}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\partial_{\mu}\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\left\{ \left[\partial_{\mu}i\int d^{4}y\bar{\eta}_{c}\left(y\right)S_{F}\,_{ca}\left(x-y\right)\right]\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\stackrel{\mbox{\partial}\mbox{ acts only on \ensuremath{x}}}{=}-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}S_{F}\,_{ca}\left(x-y\right)\right]\gamma^{\mu\, ab}\tilde{\psi}_{b}\left(x\right)\right\} =$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=-\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}\gamma^{\mu\, ab}S_{F}\,_{ca}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} =???$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $???=\int d^{4}x\left\{ \left[i\int d^{4}y\bar{\eta}_{c}\left(y\right)\partial_{\mu}\gamma^{\mu\, ca}S_{F}\,_{a}\,^{b}\left(x-y\right)\right]\tilde{\psi}_{b}\left(x\right)\right\} $
+\end_inset
+
+ check something about grassmann derivatives anticommuting!
+\end_layout
+
+\begin_layout Itemize
+Thus we get:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\hat{D}\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ -\tilde{\bar{\psi}}\left(x\right)\eta\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ -\bar{\eta}\left(x\right)\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $-i\int d^{4}x\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \bar{\eta}\left(x\right)\tilde{\psi}\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+i\int d^{4}x\int d^{4}y\bar{\eta}\left(x\right)S_{F}\left(x-y\right)\eta\left(y\right)+$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\eta\left(x\right)\right\} +$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $+i\int d^{4}x\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $=\int d^{4}x\left\{ \tilde{\bar{\psi}}\left(x\right)\hat{D}\tilde{\psi}\left(x\right)\right\} +i\int d^{4}x\int d^{4}y\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Thus all together we get that:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}_{0}\left[J,\,\eta,\,\bar{\eta}\right]=$
+\end_inset
+
+
+\begin_inset Formula $\mathcal{N}\int\mathcal{D}\phi\mathcal{D}\bar{\psi}\mathcal{D}\psi\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times e^{i\int d^{4}x\left[\tilde{\bar{\psi}}\left(x\right)\hat{D}\tilde{\psi}\left(x\right)+\frac{1}{2}\tilde{\phi}\left(x\right)KG\tilde{\phi}\left(x\right)\right]-\int d^{4}x\int d^{4}y\left[\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)+\frac{1}{2}J\left(x\right)D_{F}\left(x-y\right)J\left(y\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We make the usual shift in integration 
+\begin_inset Quotes eld
+\end_inset
+
+path variable
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Formula $\phi\mapsto\tilde{\phi}$
+\end_inset
+
+, 
+\begin_inset Formula $\psi\mapsto\tilde{\psi}$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{\psi}\mapsto\tilde{\bar{\psi}}$
+\end_inset
+
+, where the integration measure stays the same as we are shifting by a constant,
+ we that we get all together:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}_{0}\left[J,\,\eta,\,\bar{\eta}\right]=e^{-\int d^{4}x\int d^{4}y\left[\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)+\frac{1}{2}J\left(x\right)D_{F}\left(x-y\right)J\left(y\right)\right]}\mathcal{Z}_{0}\left[0,\,0,\,0\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus all in all our final result for the perturbed generating functional
+ is:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathcal{Z}\left[J,\,\eta,\,\bar{\eta}\right]=\mathcal{Z}_{0}\left[0,\,0,\,0\right]\times$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\times e^{i\int d^{4}y\left\{ \lambda\left[i\frac{\delta}{\delta\eta\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta\bar{\eta}\left(y\right)}\right]\left[\frac{1}{i}\frac{\delta}{\delta J\left(y\right)}\right]\right\} }e^{-\int d^{4}x\int d^{4}y\left[\bar{\eta}\left(y\right)S_{F}\left(x-y\right)\eta\left(x\right)+\frac{1}{2}J\left(x\right)D_{F}\left(x-y\right)J\left(y\right)\right]}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+We prove the following two states:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{0|T\left(\hat{\bar{\psi}}\left(x\right)\hat{\psi}\left(y\right)\right)|0}=$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proof:
+\bar default
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+Claim:
+\bar default
+ 
+\begin_inset Formula $\Braket{0|T\left(\hat{\phi}\left(x\right)\hat{\phi}\left(y\right)\right)|0}=$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document
